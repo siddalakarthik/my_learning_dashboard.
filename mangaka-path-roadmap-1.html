@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mangaka Path — 90-Day Manga Mastery Roadmap</title>
+<meta name="description" content="A researched 90-day roadmap and progress dashboard: absolute beginner to strong intermediate manga artist.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root{
+  --ink:#0A0A0D;
+  --ink-2:#131318;
+  --ink-3:#1B1B22;
+  --ink-4:#232330;
+  --ink-border:#2B2B37;
+  --ink-border-soft:#1F1F28;
+  --paper:#EDEAE0;
+  --paper-dim:#9490A6;
+  --paper-faint:#605C70;
+  --hanko:#C6303F;
+  --hanko-bright:#E1495A;
+  --hanko-dim:#7A2029;
+  --hikou:#6690C2;
+  --hikou-dim:#3E5A80;
+  --gold:#D3A44E;
+  --tone-dot:rgba(237,234,224,0.055);
+  --tone-dot-strong:rgba(237,234,224,0.09);
+  --shadow-hard:2px 3px 0 rgba(0,0,0,0.5);
+  --shadow-hard-lg:4px 5px 0 rgba(0,0,0,0.45);
+  --radius-s:4px;
+  --radius-m:7px;
+  --radius-l:12px;
+  --font-display:'Bebas Neue', Impact, 'Haettenschweiler', sans-serif;
+  --font-body:'Zen Kaku Gothic New', -apple-system, 'Hiragino Sans', 'Segoe UI', Roboto, sans-serif;
+  --font-mono:'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --sidebar-w:270px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--font-body);
+  font-size:15px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;font-weight:700}
+p{margin:0}
+a{color:var(--hikou)}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--hanko);color:var(--paper)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--ink-2)}
+::-webkit-scrollbar-thumb{background:var(--ink-4);border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:var(--hanko-dim)}
+
+.tone-bg{
+  background-image:radial-gradient(circle, var(--tone-dot) 1px, transparent 1.3px);
+  background-size:7px 7px;
+}
+body{
+  background-image:radial-gradient(circle, var(--tone-dot) 1px, transparent 1.3px);
+  background-size:16px 16px;
+  background-attachment:fixed;
+}
+
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- icons ---------- */
+.icon{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;vertical-align:-0.15em}
+.icon--fill{fill:currentColor;stroke:none}
+
+/* ---------- app shell ---------- */
+.app-shell{display:flex;min-height:100vh}
+
+.sidebar{
+  width:var(--sidebar-w);
+  flex-shrink:0;
+  background:var(--ink-2);
+  border-right:1px solid var(--ink-border-soft);
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+  position:sticky;
+  top:0;
+  overflow-y:auto;
+}
+.sidebar__brand{
+  padding:22px 20px 16px;
+  border-bottom:1px solid var(--ink-border-soft);
+}
+.sidebar__brand-title{
+  font-family:var(--font-display);
+  font-size:30px;
+  letter-spacing:0.5px;
+  color:var(--paper);
+  line-height:1;
+}
+.sidebar__brand-title span{color:var(--hanko)}
+.sidebar__brand-sub{
+  font-family:var(--font-mono);
+  font-size:10.5px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--paper-faint);
+  margin-top:5px;
+}
+
+.sidebar__search-trigger{
+  display:flex;align-items:center;gap:9px;width:calc(100% - 32px);margin:14px 16px 0;
+  background:var(--ink-3);border:1px solid var(--ink-border);color:var(--paper-faint);
+  padding:9px 11px;border-radius:var(--radius-m);font-size:13px;text-align:left;
+}
+.sidebar__search-trigger:hover{border-color:var(--hikou-dim);color:var(--paper)}
+.sidebar__search-trigger span:nth-child(2){flex:1}
+.sidebar__search-kbd{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--paper-faint);
+  border:1px solid var(--ink-border);border-radius:4px;padding:1px 6px;
+}
+.sidebar__xp{
+  margin:14px 16px;
+  padding:12px 14px;
+  background:var(--ink-3);
+  border:1px solid var(--ink-border);
+  border-radius:var(--radius-m);
+}
+.sidebar__xp-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.sidebar__level{font-family:var(--font-display);font-size:19px;color:var(--gold);letter-spacing:0.3px}
+.sidebar__xp-num{font-family:var(--font-mono);font-size:11px;color:var(--paper-dim)}
+.xp-track{height:6px;border-radius:4px;background:var(--tone-dot-strong);overflow:hidden;position:relative}
+.xp-fill{height:100%;background:linear-gradient(90deg,var(--hanko-dim),var(--hanko));border-radius:4px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+.sidebar__nav{flex:1;padding:8px 10px 14px;overflow-y:auto}
+.nav-item{
+  display:flex;align-items:center;gap:10px;
+  width:100%;text-align:left;
+  background:none;border:none;color:var(--paper-dim);
+  padding:10px 10px;border-radius:var(--radius-s);
+  font-size:14px;font-weight:500;
+  transition:background .15s,color .15s;
+}
+.nav-item .icon{color:var(--paper-faint);transition:color .15s}
+.nav-item:hover{background:var(--ink-3);color:var(--paper)}
+.nav-item.is-active{background:var(--ink-4);color:var(--paper)}
+.nav-item.is-active .icon{color:var(--hanko-bright)}
+
+.nav-group{margin-top:2px}
+.nav-group__header{
+  display:flex;align-items:center;gap:10px;width:100%;
+  background:none;border:none;color:var(--paper-dim);
+  padding:10px 10px;border-radius:var(--radius-s);font-size:14px;font-weight:600;
+  text-align:left;
+}
+.nav-group__header:hover{background:var(--ink-3);color:var(--paper)}
+.nav-group__header .icon{color:var(--paper-faint)}
+.nav-group__phase-progress{
+  margin-left:auto;font-family:var(--font-mono);font-size:10.5px;color:var(--paper-faint);
+}
+.nav-group__chevron{transition:transform .25s ease;color:var(--paper-faint)!important}
+.nav-group.is-open .nav-group__chevron{transform:rotate(90deg)}
+.nav-group__body{
+  display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease;
+}
+.nav-group.is-open .nav-group__body{grid-template-rows:1fr}
+.nav-group__body-inner{overflow:hidden}
+.nav-subitem{
+  display:flex;align-items:center;gap:9px;width:100%;text-align:left;
+  background:none;border:none;color:var(--paper-faint);
+  padding:7px 10px 7px 30px;border-radius:var(--radius-s);font-size:13px;
+}
+.nav-subitem:hover{background:var(--ink-3);color:var(--paper)}
+.nav-subitem.is-active{color:var(--hanko-bright);background:var(--ink-3)}
+.nav-subitem__dot{width:6px;height:6px;border-radius:50%;background:var(--ink-border);flex-shrink:0}
+.nav-subitem__dot.is-done{background:var(--hanko)}
+
+.sidebar__footer{padding:12px 16px 16px;border-top:1px solid var(--ink-border-soft);display:flex;gap:8px}
+
+/* ---------- topbar (mobile) ---------- */
+.topbar{
+  display:none;
+  align-items:center;gap:12px;
+  padding:14px 16px;
+  background:var(--ink-2);
+  border-bottom:1px solid var(--ink-border-soft);
+  position:sticky;top:0;z-index:20;
+}
+.topbar__title{font-family:var(--font-display);font-size:22px;letter-spacing:.3px;flex:1}
+.topbar__title span{color:var(--hanko)}
+.icon-btn{
+  background:var(--ink-3);border:1px solid var(--ink-border);color:var(--paper);
+  width:38px;height:38px;border-radius:var(--radius-s);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.icon-btn:active{transform:translateY(1px)}
+
+/* ---------- main ---------- */
+.main{flex:1;min-width:0;padding:32px 40px 90px}
+.view{animation:viewIn .35s ease both}
+@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.view-header{margin-bottom:26px}
+.eyebrow{
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--hanko-bright);margin-bottom:6px;display:block;
+}
+.view-title{font-family:var(--font-display);font-size:38px;letter-spacing:.3px;color:var(--paper)}
+.view-subtitle{color:var(--paper-dim);margin-top:8px;max-width:640px;font-size:14.5px}
+
+/* ---------- cards / panels ---------- */
+.panel{
+  background:var(--ink-2);
+  border:1.5px solid var(--ink-border);
+  border-radius:var(--radius-m);
+  box-shadow:var(--shadow-hard);
+}
+.panel--pad{padding:20px 22px}
+
+/* ---------- dashboard hero ---------- */
+.hero{
+  display:grid;grid-template-columns:auto 1fr;gap:28px;
+  padding:26px 28px;margin-bottom:22px;align-items:center;
+}
+.hero__ring-wrap{position:relative;width:118px;height:118px;flex-shrink:0}
+.hero__ring-wrap svg{transform:rotate(-90deg)}
+.hero__ring-pct{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.hero__ring-pct b{font-family:var(--font-display);font-size:26px;color:var(--paper)}
+.hero__ring-pct span{font-family:var(--font-mono);font-size:9px;color:var(--paper-faint);letter-spacing:1px}
+.hero__body h2{font-family:var(--font-display);font-size:26px;letter-spacing:.3px;margin-bottom:6px}
+.hero__body p{color:var(--paper-dim);font-size:14px;margin-bottom:14px}
+.hero__actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-bottom:22px}
+.stat-card{padding:16px 18px}
+.stat-card__num{font-family:var(--font-display);font-size:28px;color:var(--paper);line-height:1}
+.stat-card__label{font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--paper-faint);margin-top:6px}
+
+.phase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:22px}
+.phase-card{padding:18px 20px;cursor:pointer;transition:transform .15s,border-color .15s}
+.phase-card:hover{transform:translateY(-2px);border-color:var(--hanko-dim)}
+.phase-card__num{font-family:var(--font-mono);font-size:11px;color:var(--paper-faint);letter-spacing:1px}
+.phase-card__title{font-family:var(--font-display);font-size:22px;margin:4px 0 10px}
+.phase-card__bar{height:8px;border-radius:5px}
+
+.section-heading{
+  display:flex;align-items:center;justify-content:space-between;
+  margin:0 0 12px;font-family:var(--font-display);font-size:19px;letter-spacing:.3px;color:var(--paper);
+}
+.section-heading .icon{color:var(--hanko-bright);margin-right:8px}
+
+.badges-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+
+/* ---------- progress bars ---------- */
+.progress-bar{height:9px;border-radius:6px;overflow:hidden;position:relative}
+.progress-bar__fill{height:100%;background:linear-gradient(90deg,var(--hanko-dim),var(--hanko-bright));transition:width .6s cubic-bezier(.4,0,.2,1)}
+
+/* ---------- badges ---------- */
+.badge-chip,.badge-card{
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;
+  width:84px;
+}
+.badge-card{width:auto;padding:16px 10px}
+.badge-stamp{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%, var(--hanko-bright), var(--hanko) 60%, var(--hanko-dim) 100%);
+  border:2px solid var(--hanko-bright);
+  color:var(--paper);
+  box-shadow:0 0 0 3px rgba(198,48,63,0.15);
+  transform:rotate(-6deg);
+}
+.badge-stamp .icon{width:24px;height:24px}
+.badge-chip.is-locked .badge-stamp,.badge-card.is-locked .badge-stamp{
+  background:var(--ink-3);border-color:var(--ink-border);color:var(--paper-faint);box-shadow:none;
+}
+.badge-name{font-size:11.5px;font-weight:700;color:var(--paper)}
+.badge-chip.is-locked .badge-name,.badge-card.is-locked .badge-name{color:var(--paper-faint)}
+.badge-desc{font-size:11px;color:var(--paper-dim);line-height:1.4}
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+
+/* ---------- week block / day rows ---------- */
+.week-block{margin-bottom:16px;overflow:hidden}
+.week-block__header{
+  display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  background:none;border:none;color:var(--paper);padding:16px 20px;
+}
+.week-block__header:hover{background:var(--ink-3)}
+.week-block__index{font-family:var(--font-mono);font-size:11px;color:var(--paper-faint);letter-spacing:1px;white-space:nowrap}
+.week-block__title{font-weight:700;font-size:15px;flex:1}
+.week-block__meta{font-family:var(--font-mono);font-size:11px;color:var(--paper-faint)}
+.week-block__chevron{transition:transform .25s ease;color:var(--paper-faint)}
+.week-block.is-open .week-block__chevron{transform:rotate(90deg)}
+.week-block__progress{width:64px;height:5px;border-radius:4px;margin-left:8px}
+.week-block__body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease;border-top:1px solid transparent}
+.week-block.is-open .week-block__body{grid-template-rows:1fr;border-top:1px solid var(--ink-border-soft)}
+.week-block__body-inner{overflow:hidden}
+
+.day-row{
+  display:flex;align-items:flex-start;gap:12px;padding:13px 20px;
+  border-bottom:1px solid var(--ink-border-soft);cursor:pointer;
+}
+.day-row:last-child{border-bottom:none}
+.day-row:hover{background:var(--ink-3)}
+.day-row.is-review{background:rgba(198,48,63,0.06)}
+.day-row__check{margin-top:2px;flex-shrink:0}
+.day-row__num{font-family:var(--font-mono);font-size:11px;color:var(--paper-faint);width:34px;flex-shrink:0;padding-top:2px}
+.day-row__body{flex:1;min-width:0}
+.day-row__title{font-size:13.5px;font-weight:600;color:var(--paper)}
+.day-row.is-done .day-row__title{color:var(--paper-dim);text-decoration:line-through;text-decoration-color:var(--hanko-dim)}
+.day-row__obj{font-size:12px;color:var(--paper-faint);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.day-row__time{font-family:var(--font-mono);font-size:10.5px;color:var(--paper-faint);white-space:nowrap;padding-top:2px}
+
+.checkbox{
+  appearance:none;-webkit-appearance:none;width:20px;height:20px;border-radius:5px;
+  border:2px solid var(--ink-border);background:var(--ink);cursor:pointer;position:relative;flex-shrink:0;
+  transition:border-color .15s,background .15s;
+}
+.checkbox:hover{border-color:var(--hanko-dim)}
+.checkbox:checked{background:var(--hanko);border-color:var(--hanko)}
+.checkbox:checked::after{
+  content:'';position:absolute;left:5px;top:1px;width:5px;height:10px;
+  border:solid var(--paper);border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+
+.week-review-card{margin:14px 20px 18px;padding:16px 18px;background:var(--ink-3);border:1.5px dashed var(--hanko-dim);border-radius:var(--radius-m)}
+.week-review-card__title{font-family:var(--font-display);font-size:16px;color:var(--hanko-bright);letter-spacing:.3px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.review-row{margin-bottom:10px}
+.review-row:last-child{margin-bottom:0}
+.review-row__label{font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--paper-faint);margin-bottom:3px}
+.review-row__text{font-size:13px;color:var(--paper-dim);line-height:1.55}
+
+/* ---------- day detail ---------- */
+.day-detail__top{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px}
+.day-detail__check-wrap{padding-top:6px}
+.day-detail__check{width:30px;height:30px;border-radius:8px}
+.day-detail__check:checked::after{left:9px;top:4px;width:7px;height:14px}
+.day-detail__meta-row{display:flex;gap:10px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.pill{
+  font-family:var(--font-mono);font-size:10.5px;letter-spacing:.5px;
+  padding:3px 9px;border-radius:20px;border:1px solid var(--ink-border);color:var(--paper-dim);
+  display:inline-flex;align-items:center;gap:5px;
+}
+.pill--time .icon{width:11px;height:11px}
+.pill--hanko{border-color:var(--hanko-dim);color:var(--hanko-bright)}
+
+.day-section{margin-bottom:22px}
+.day-section__label{
+  display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--hanko-bright);margin-bottom:9px;
+}
+.day-section__label .icon{width:14px;height:14px}
+.day-section__body{font-size:14.5px;color:var(--paper);line-height:1.65}
+.day-section__body p{margin-bottom:8px}
+.mistake-list,.check-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.mistake-list li{display:flex;gap:9px;font-size:13.5px;color:var(--paper-dim);line-height:1.5}
+.mistake-list li::before{content:'\2715';color:var(--hanko-bright);flex-shrink:0;font-size:11px;padding-top:2px}
+.check-list li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--paper);line-height:1.5}
+.outcome-box{
+  padding:14px 16px;background:rgba(102,144,194,0.08);border:1.5px solid var(--hikou-dim);border-radius:var(--radius-m);
+  font-size:14px;color:var(--paper);line-height:1.6;
+}
+
+.resource-card{
+  display:flex;gap:12px;padding:12px;margin-bottom:10px;border-radius:var(--radius-m);
+  background:var(--ink-3);border:1px solid var(--ink-border);
+}
+.resource-card__thumb{
+  width:100px;height:64px;flex-shrink:0;border-radius:var(--radius-s);background:var(--ink);
+  background-size:cover;background-position:center;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;border:1px solid var(--ink-border);
+}
+.resource-card__thumb .icon{color:rgba(237,234,224,.85);width:22px;height:22px}
+.resource-card__thumb.no-thumb{background:var(--ink-4)}
+.resource-card__body{flex:1;min-width:0}
+.resource-card__creator{font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--hanko-bright)}
+.resource-card__title{font-weight:700;font-size:13.5px;color:var(--paper);margin:2px 0 5px}
+.resource-card__why{font-size:12px;color:var(--paper-dim);line-height:1.5;margin-bottom:8px}
+.resource-card__actions{display:flex;gap:8px;flex-wrap:wrap}
+.resource-card__link{font-family:var(--font-mono);font-size:11px;color:var(--hikou);display:inline-flex;align-items:center;gap:4px;text-decoration:none}
+.resource-card__link:hover{color:var(--paper)}
+.resource-embed{margin-top:10px;border-radius:var(--radius-s);overflow:hidden;background:#000;aspect-ratio:16/9}
+.resource-embed iframe{width:100%;height:100%;border:0;display:block}
+
+.notes-box{margin-top:6px}
+textarea.notes-input{
+  width:100%;min-height:110px;background:var(--ink);border:1.5px solid var(--ink-border);
+  border-radius:var(--radius-m);color:var(--paper);font-family:var(--font-body);font-size:13.5px;
+  padding:12px 14px;resize:vertical;line-height:1.55;
+}
+textarea.notes-input:focus{outline:none;border-color:var(--hikou-dim)}
+.notes-save-hint{font-family:var(--font-mono);font-size:10px;color:var(--paper-faint);margin-top:6px}
+
+.day-nav{display:flex;justify-content:space-between;margin-top:30px;gap:12px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px;border-radius:var(--radius-s);font-size:13.5px;font-weight:700;
+  border:1.5px solid transparent;box-shadow:var(--shadow-hard);transition:transform .1s;
+}
+.btn:active{transform:translate(1px,2px);box-shadow:1px 1px 0 rgba(0,0,0,.5)}
+.btn--primary{background:var(--hanko);color:#fff;border-color:var(--hanko-bright)}
+.btn--primary:hover{background:var(--hanko-bright)}
+.btn--ghost{background:var(--ink-3);color:var(--paper);border-color:var(--ink-border)}
+.btn--ghost:hover{border-color:var(--paper-faint)}
+.btn--sm{padding:7px 12px;font-size:12px;box-shadow:none}
+.btn .icon{width:15px;height:15px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ---------- calendar ---------- */
+.calendar-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.calendar-toolbar label{font-family:var(--font-mono);font-size:11px;color:var(--paper-dim)}
+.calendar-toolbar input[type=date]{
+  background:var(--ink-3);border:1px solid var(--ink-border);color:var(--paper);
+  padding:7px 10px;border-radius:var(--radius-s);font-family:var(--font-body);font-size:13px;
+}
+.calendar-legend{display:flex;gap:16px;margin-left:auto;font-size:11.5px;color:var(--paper-dim);flex-wrap:wrap}
+.calendar-legend span{display:inline-flex;align-items:center;gap:5px}
+.legend-dot{width:9px;height:9px;border-radius:3px;display:inline-block}
+
+.calendar-month{margin-bottom:26px}
+.calendar-month__title{font-family:var(--font-display);font-size:20px;margin-bottom:10px;letter-spacing:.3px}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.calendar-dow{text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--paper-faint);padding-bottom:4px}
+.calendar-cell{
+  aspect-ratio:1;border-radius:var(--radius-s);border:1px solid var(--ink-border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-size:11.5px;color:var(--paper-dim);background:var(--ink-2);position:relative;
+}
+.calendar-cell.has-day{cursor:pointer}
+.calendar-cell.has-day:hover{border-color:var(--hikou-dim)}
+.calendar-cell.is-empty{border-color:transparent;background:transparent}
+.calendar-cell__daynum{font-weight:700;color:var(--paper)}
+.calendar-cell__prognum{font-family:var(--font-mono);font-size:9px;color:var(--paper-faint)}
+.calendar-cell.is-done{background:var(--hanko-dim);border-color:var(--hanko)}
+.calendar-cell.is-done .calendar-cell__daynum{color:#fff}
+.calendar-cell.is-today{outline:2px solid var(--hikou);outline-offset:-2px}
+.calendar-cell.is-review{border-color:var(--hikou-dim)}
+
+/* ---------- search ---------- */
+.search-overlay{
+  position:fixed;inset:0;background:rgba(6,6,8,0.82);backdrop-filter:blur(3px);
+  z-index:60;display:flex;align-items:flex-start;justify-content:center;padding:70px 20px;
+  opacity:0;pointer-events:none;transition:opacity .18s;
+}
+.search-overlay.is-open{opacity:1;pointer-events:auto}
+.search-panel{width:100%;max-width:560px;max-height:70vh;display:flex;flex-direction:column}
+.search-input-wrap{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--ink-border)}
+.search-input-wrap .icon{color:var(--paper-faint)}
+.search-input{flex:1;background:none;border:none;color:var(--paper);font-size:16px;font-family:var(--font-body)}
+.search-input:focus{outline:none}
+.search-results{overflow-y:auto;padding:8px}
+.search-result{display:flex;gap:10px;align-items:center;padding:11px 12px;border-radius:var(--radius-s)}
+.search-result:hover{background:var(--ink-3)}
+.search-result__num{font-family:var(--font-mono);font-size:10.5px;color:var(--hanko-bright);width:30px;flex-shrink:0}
+.search-result__title{font-size:13.5px;font-weight:600;color:var(--paper)}
+.search-result__meta{font-size:11.5px;color:var(--paper-faint)}
+.search-empty{padding:24px;text-align:center;color:var(--paper-faint);font-size:13px}
+
+/* ---------- notes view ---------- */
+.note-card{padding:16px 18px;margin-bottom:12px}
+.note-card__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.note-card__day{font-family:var(--font-mono);font-size:11px;color:var(--hanko-bright)}
+.note-card__title{font-size:13.5px;font-weight:700;color:var(--paper)}
+.note-card__text{font-size:13.5px;color:var(--paper-dim);line-height:1.55;white-space:pre-wrap}
+
+/* ---------- final project ---------- */
+.deliverable-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+.deliverable-card{padding:18px 20px}
+.deliverable-card__num{font-family:var(--font-mono);font-size:10.5px;color:var(--paper-faint)}
+.deliverable-card__title{font-family:var(--font-display);font-size:19px;color:var(--paper);margin:4px 0 8px;letter-spacing:.2px}
+.deliverable-card__desc{font-size:13px;color:var(--paper-dim);line-height:1.55;margin-bottom:10px}
+.deliverable-card__days{display:flex;gap:6px;flex-wrap:wrap}
+.day-chip{font-family:var(--font-mono);font-size:10.5px;color:var(--hikou);border:1px solid var(--hikou-dim);border-radius:20px;padding:2px 8px}
+.reality-box{margin-top:24px;padding:18px 20px;border-left:3px solid var(--gold);background:rgba(211,164,78,0.07)}
+.reality-box__title{font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.reality-box p{font-size:13.5px;color:var(--paper-dim);line-height:1.6}
+
+/* ---------- start-here / materials ---------- */
+.materials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+.materials-card{padding:16px 18px}
+.materials-card__title{font-weight:700;font-size:13.5px;margin-bottom:6px;color:var(--paper);display:flex;align-items:center;gap:8px}
+.materials-card__title .icon{color:var(--hanko-bright)}
+.materials-card p{font-size:12.5px;color:var(--paper-dim);line-height:1.55}
+
+/* ---------- toast ---------- */
+#toast-container{position:fixed;bottom:24px;right:24px;z-index:80;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.toast{
+  display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:var(--radius-m);
+  background:var(--ink-2);border:1.5px solid var(--hanko);box-shadow:var(--shadow-hard-lg);
+  animation:toastIn .35s cubic-bezier(.34,1.56,.64,1) both;max-width:300px;
+}
+@keyframes toastIn{from{opacity:0;transform:translateX(30px) scale(.9)}to{opacity:1;transform:translateX(0) scale(1)}}
+.toast.is-leaving{animation:toastOut .25s ease both}
+@keyframes toastOut{to{opacity:0;transform:translateX(30px)}}
+.toast__title{font-size:12px;font-weight:700;color:var(--paper)}
+.toast__sub{font-size:11.5px;color:var(--paper-dim)}
+
+/* ---------- reset progress modal ---------- */
+.modal-backdrop{position:fixed;inset:0;background:rgba(6,6,8,.75);z-index:70;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .18s}
+.modal-backdrop.is-open{opacity:1;pointer-events:auto}
+.modal{width:100%;max-width:380px;padding:22px}
+.modal h3{font-family:var(--font-display);font-size:20px;margin-bottom:10px}
+.modal p{font-size:13.5px;color:var(--paper-dim);margin-bottom:18px;line-height:1.55}
+.modal__actions{display:flex;gap:10px;justify-content:flex-end}
+
+/* ---------- mobile tabbar ---------- */
+.tabbar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;
+  background:var(--ink-2);border-top:1px solid var(--ink-border-soft);
+  padding:6px 4px calc(6px + env(safe-area-inset-bottom));
+}
+.tabbar__inner{display:flex;justify-content:space-around}
+.tabbar__item{
+  display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;
+  color:var(--paper-faint);font-size:9.5px;font-family:var(--font-mono);padding:5px 8px;border-radius:8px;
+}
+.tabbar__item.is-active{color:var(--hanko-bright)}
+.tabbar__item .icon{width:19px;height:19px}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .sidebar{display:none}
+  .topbar{display:flex}
+  .tabbar{display:block}
+  .main{padding:20px 16px 90px}
+  .view-title{font-size:30px}
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero__ring-wrap{margin:0 auto}
+  .hero__actions{justify-content:center}
+  .sidebar.mobile-open{
+    display:flex;position:fixed;top:0;left:0;bottom:0;width:82%;max-width:300px;z-index:50;height:100vh;box-shadow:8px 0 24px rgba(0,0,0,.5);
+  }
+  .sidebar-scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:40}
+  .sidebar-scrim.is-open{display:block}
+}
+@media (max-width:520px){
+  .day-detail__top{flex-direction:row}
+  .resource-card{flex-direction:column}
+  .resource-card__thumb{width:100%;height:150px}
+  .deliverable-grid{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:0.001s!important;transition-duration:0.001s!important}
+}
+
+@media print{
+  .sidebar,.topbar,.tabbar,#toast-container{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+<defs>
+<symbol id="icon-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+<symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 4.5S7 3.5 12 5.5C17 3.5 20 4.5 20 4.5V19S17 18 12 20C7 18 4 19 4 19Z"/><path d="M12 5.5V20"/></symbol>
+<symbol id="icon-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+<symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17"/><path d="M8 3v4M16 3v4"/></symbol>
+<symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+<symbol id="icon-pencil" viewBox="0 0 24 24"><path d="M4 20l1-5L16 4l4 4L9 19l-5 1z"/><path d="M14 6l4 4"/></symbol>
+<symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L12 17l-5.6 3.1 1.4-6.3-4.8-4.3 6.4-.6z"/></symbol>
+<symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 01-10 0V4z"/><path d="M7 5H4v2a3 3 0 003 3M17 5h3v2a3 3 0 01-3 3"/><path d="M12 14v3M9 21h6M9 18h6v3H9z"/></symbol>
+<symbol id="icon-check" viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></symbol>
+<symbol id="icon-play" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></symbol>
+<symbol id="icon-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18 6l-1.6 1.6M7.6 16.4L6 18M18 18l-1.6-1.6M7.6 7.6L6 6"/></symbol>
+<symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5"/><path d="M4 19h16"/></symbol>
+<symbol id="icon-upload" viewBox="0 0 24 24"><path d="M12 21V9M7 13l5-5 5 5"/><path d="M4 19h16"/></symbol>
+<symbol id="icon-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+<symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="icon-flag" viewBox="0 0 24 24"><path d="M5 3v18"/><path d="M5 4h13l-3 4 3 4H5"/></symbol>
+<symbol id="icon-fire" viewBox="0 0 24 24"><path d="M12 2c1 4-4 5-4 9a4 4 0 008 0c0-2-1-3-1-3s2 1 2 4a6 6 0 01-12 0C5 7 9 6 12 2z"/></symbol>
+<symbol id="icon-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></symbol>
+<symbol id="icon-hand" viewBox="0 0 24 24"><path d="M8 13V5a1.5 1.5 0 013 0v6M11 11V4a1.5 1.5 0 013 0v7M14 11V5a1.5 1.5 0 013 0v8M17 12V8a1.5 1.5 0 013 0v6c0 4-2.5 7-7 7s-6-2-7.5-5L4 15c-.6-1 .1-2 1.2-1.7L8 14"/></symbol>
+<symbol id="icon-mask" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 10.5c.5-1 1.5-1 2 0M14 10.5c.5-1 1.5-1 2 0M8 15c1.5 1.5 6.5 1.5 8 0"/></symbol>
+<symbol id="icon-burst" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></symbol>
+<symbol id="icon-stamp" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="14" rx="1.5"/><path d="M3 21h18M8 4V2h8v2M9 8h6M9 11h6M9 14h4"/></symbol>
+<symbol id="icon-bone" viewBox="0 0 24 24"><path d="M5 9a2 2 0 113.5 1.3l6.2 6.2A2 2 0 1117 19a2 2 0 01-3.3-1.5l-6.2-6.2A2 2 0 015 9z"/></symbol>
+<symbol id="icon-hair" viewBox="0 0 24 24"><path d="M4 18c0-8 4-14 8-14s8 6 8 14M8 18c0-6 2-10 4-10s4 4 4 10"/></symbol>
+<symbol id="icon-figure" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.3"/><path d="M12 8v7M8 11l4-1.5L16 11M8 20l4-5 4 5"/></symbol>
+<symbol id="icon-pillar" viewBox="0 0 24 24"><path d="M6 4h12M6 20h12M8 6v12M16 6v12"/></symbol>
+<symbol id="icon-line" viewBox="0 0 24 24"><path d="M5 19L19 5"/><circle cx="5" cy="19" r="1.6"/><circle cx="19" cy="5" r="1.6"/></symbol>
+<symbol id="icon-flow" viewBox="0 0 24 24"><path d="M3 12c2-6 6-6 9 0s7 6 9 0"/></symbol>
+<symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+<symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4L10 14"/><path d="M18 13v6a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h6"/></symbol>
+<symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+<symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17h.01"/></symbol>
+<symbol id="icon-note" viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6z"/><path d="M15 3v5h5M9 12h6M9 16h6"/></symbol>
+<symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.8"/></symbol>
+<symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></symbol>
+</defs>
+</svg>
+
+<noscript><div style="padding:40px;font-family:sans-serif;color:#EDEAE0;background:#0A0A0D">This dashboard needs JavaScript enabled to run.</div></noscript>
+
+<div class="app-shell" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__brand">
+      <div class="sidebar__brand-title">漫画 <span>·</span> PATH</div>
+      <div class="sidebar__brand-sub">90-Day Mangaka Roadmap</div>
+    </div>
+    <button class="sidebar__search-trigger" data-action="open-search">
+      <svg class="icon"><use href="#icon-search"></use></svg>
+      <span>Search 90 days…</span>
+      <span class="sidebar__search-kbd">/</span>
+    </button>
+    <div id="sidebarXP"></div>
+    <nav class="sidebar__nav" id="sidebarNav"></nav>
+    <div class="sidebar__footer">
+      <button class="btn btn--ghost btn--sm" data-action="export-progress" title="Export progress as JSON"><svg class="icon"><use href="#icon-download"></use></svg> Export</button>
+      <button class="btn btn--ghost btn--sm" data-action="trigger-import" title="Import progress from JSON"><svg class="icon"><use href="#icon-upload"></use></svg> Import</button>
+      <button class="btn btn--ghost btn--sm" data-action="reset-progress" title="Reset all progress"><svg class="icon"><use href="#icon-refresh"></use></svg></button>
+    </div>
+  </aside>
+
+  <div class="sidebar-scrim" id="sidebarScrim" data-action="close-menu"></div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <header class="topbar">
+      <button class="icon-btn" data-action="open-menu"><svg class="icon"><use href="#icon-menu"></use></svg></button>
+      <div class="topbar__title" id="topbarTitleText">Dashboard</div>
+      <button class="icon-btn" data-action="open-search"><svg class="icon"><use href="#icon-search"></use></svg></button>
+    </header>
+
+    <main class="main" id="main"></main>
+
+    <nav class="tabbar">
+      <div class="tabbar__inner" id="tabbarInner"></div>
+    </nav>
+  </div>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel panel">
+    <div class="search-input-wrap">
+      <svg class="icon"><use href="#icon-search"></use></svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search all 90 days… (try 'hands' or 'perspective')" autocomplete="off">
+      <button class="icon-btn" data-action="close-search"><svg class="icon"><use href="#icon-x"></use></svg></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="resetModal">
+  <div class="modal panel">
+    <h3>Reset all progress?</h3>
+    <p>This clears every completed day, checklist mark, note and badge saved on this device. This can't be undone — consider using Export first to keep a backup.</p>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" data-action="cancel-reset">Cancel</button>
+      <button class="btn btn--primary" data-action="confirm-reset">Reset Everything</button>
+    </div>
+  </div>
+</div>
+
+<div id="toastContainer"></div>
+<input type="file" id="importFileInput" accept="application/json,.json" style="display:none" data-action="import-file">
+
+<script>
+const CURRICULUM = {"resources":{"drawabox_l1":{"title":"Lesson 1: Lines, Ellipses & Boxes","creator":"Drawabox","embed_type":"site","url":"https://drawabox.com/lesson/1","why":"Drawabox is the most consistently recommended starting point for absolute beginners in the self-taught art community, and for good reason: Lesson 1 is the only major free course built entirely around building physical confidence and control before worrying about anything looking 'good.' Proko and Marc Brunet both assume some baseline control already exists — Drawabox is the one that actually builds it. Free, self-paced, and homework-checked by a real community."},"drawabox_l2":{"title":"Lesson 2: Contour Lines & Texture","creator":"Drawabox","embed_type":"site","url":"https://drawabox.com/lesson/2","why":"Bridges flat shapes into believable 3D form using contour curves — the same skill that later lets you wrap tone and cloth around a body convincingly. Chosen over jumping straight to Proko's forms content because Drawabox isolates the 'this is a surface in space' feeling before anatomy adds complexity on top."},"alphonso_dunn_penink":{"title":"Pen & Ink Workshop","creator":"Alphonso Dunn","embed_type":"channel","url":"https://www.youtube.com/c/ALPHONSODUNN","why":"A New York Academy of Art–trained instructor whose whole channel is devoted to confident, controlled mark-making with a pen — exactly the skill manga inking depends on. Chosen over generic 'how to ink' videos because Dunn teaches the mechanics of stroke control and the 'Line of Balance' concept, not just a finished look."},"marcbrunet_lineart":{"title":"How to Draw Good Lineart","creator":"Marc Brunet","embed_type":"channel","url":"https://www.youtube.com/@YTartschool","why":"Marc Brunet's channel is built for absolute beginners who feel intimidated, with a faster, funnier pace than Drawabox's text-heavy site. Used here as the loosening-up counterpart to Drawabox's precision drills — you need both a steady hand and a relaxed one."},"proko_gesture_playlist":{"title":"Gesture Drawing (full playlist)","creator":"Proko","embed_type":"playlist","yt_list":"PLtG4P3lq8RHEQ1kiN_Nub1vXR8fQQLjDF","url":"https://www.youtube.com/playlist?list=PLtG4P3lq8RHEQ1kiN_Nub1vXR8fQQLjDF","why":"Stan Prokopenko's gesture series is the single most-recommended free introduction to gesture across every major art-education community, ahead of Sycra's or Ejenkins' shorter takes, because it explains the *reasoning* (rhythm, flow, C/S-curves) rather than just demonstrating results you'd have to reverse-engineer."},"proko_gesture_howto":{"title":"How to Draw Gesture","creator":"Proko","embed_type":"video","yt_id":"74HR59yFZ7Y","url":"https://www.youtube.com/watch?v=74HR59yFZ7Y","why":"The specific first lesson of the gesture series — chosen as Day 1's video because it defines gesture/rhythm/flow before asking you to draw anything, so your first attempts aren't just guessing."},"ethan_becker_channel":{"title":"Gesture & Action-Pose Breakdowns","creator":"Ethan Becker","embed_type":"video","yt_id":"7TRlYMqjfIM","url":"https://www.youtube.com/watch?v=7TRlYMqjfIM","why":"A working animation-industry artist (Voltron, Studio Mir) whose 'one shape' gesture method is widely cited by digital artists as the missing link between Proko's academic rhythm lines and actually dynamic, weighted action poses — exactly what Phase 3's manga action work needs later."},"lovelifedrawing_gesture":{"title":"Figure Drawing Will Make Sense After This","creator":"Love Life Drawing","embed_type":"video","yt_id":"ZH6E_n51-BQ","url":"https://www.youtube.com/watch?v=ZH6E_n51-BQ","why":"Run by Mayko (a professional figure-drawing artist) and Kenzo, this channel built its 230k+ subscribers specifically by starting at 'step 1' when most life-drawing teaching assumes step 100. Chosen for its 11-step gesture breakdown, which is more procedural and beginner-safe than Proko's more intuitive approach — good to have both."},"moderndayjames_channel":{"title":"Weekly Figure & Gesture Practice","creator":"Moderndayjames","embed_type":"channel","url":"https://www.youtube.com/c/ModernDayJames/videos","why":"A working NY animator who live-streams practice and posts real, unpolished gesture sessions (his '400 Gesture Drawing Challenge' is a community landmark). Included specifically to show what *practice* looks like day-to-day, not just polished final demos — useful psychological reference for your own messy pages."},"proko_loomis_playlist":{"title":"Draw the Head From Any Angle (Loomis Method)","creator":"Proko","embed_type":"playlist","yt_list":"PL39135B8D190B7C97","url":"https://www.youtube.com/playlist?list=PL39135B8D190B7C97","why":"The definitive free teaching of Andrew Loomis's head-construction method, still cited by working professionals as a refresher. Chosen over Marc Brunet's or Sinix's head videos because it is the origin technique that manga-style head construction (Week 9) will later deliberately distort — you need the accurate version first to distort it on purpose instead of by accident."},"marcbrunet_male_body":{"title":"Drawing the Male Body (construction explained)","creator":"Marc Brunet","embed_type":"video","yt_id":"VUKd7BF8yC0","url":"https://youtu.be/VUKd7BF8yC0","why":"A faster, more energetic construction pass than Proko's anatomy course — used as the 'see the whole body built in one sitting' overview before Proko's slower, more detailed part-by-part lessons fill in the depth."},"marcbrunet_female_body":{"title":"Drawing the Female Body (construction explained)","creator":"Marc Brunet","embed_type":"channel","url":"https://www.youtube.com/@YTartschool","why":"Companion piece to the male-body video; Brunet explicitly teaches construction differences rather than treating 'default' anatomy as one gender, which matters for a manga cast with varied character types."},"proko_anatomy_course":{"title":"Anatomy of the Human Body for Artists","creator":"Proko","embed_type":"channel","url":"https://www.proko.com/course/anatomy-of-the-human-body","why":"The deepest free/paid anatomy series available from any single teacher on this list — ribcage, pelvis, spine and their interaction are covered as a *system*, not isolated parts, which is exactly what's needed to keep twisting manga action poses believable."},"lovelifedrawing_shapes":{"title":"These 10 Shapes Unlock All of Figure Drawing","creator":"Love Life Drawing","embed_type":"video","yt_id":"LQQXCJvy36Y","url":"https://www.youtube.com/watch?v=LQQXCJvy36Y","why":"Deliberately picked as the 'simplify the ribcage/pelvis down to shapes you can actually hold in your head' counterpart to Proko's denser anatomy lessons — use this when Proko's detail feels overwhelming."},"proko_hands":{"title":"Drawing Hands (full series)","creator":"Proko","embed_type":"channel","url":"https://www.proko.com/course/hands","why":"Repeatedly named by other instructors on this exact list (Sinix among them) as the best free hand tutorial on YouTube. Chosen over Marc Brunet's hands-and-feet video as the primary resource because it separately covers bone structure, muscle, and gesture — Brunet's video is kept as a faster secondary refresher."},"proko_feet_playlist":{"title":"Feet Anatomy (full playlist)","creator":"Proko","embed_type":"playlist","yt_list":"PLo1MyIYOwxxyJ_nVVg2v6Yv1K880i2BtP","url":"https://www.youtube.com/playlist?list=PLo1MyIYOwxxyJ_nVVg2v6Yv1K880i2BtP","why":"Feet are the most commonly skipped body part in self-taught curricula, so a dedicated, structure-first playlist (bones → gesture → shading) was chosen deliberately over a quick 5-minute overview video."},"marcbrunet_hands_feet":{"title":"How to Draw Hands & Feet","creator":"Marc Brunet","embed_type":"video","yt_id":"wSMhDiWmjy8","url":"https://youtu.be/wSMhDiWmjy8","why":"A quicker, more stylization-friendly pass used as a secondary reference once Proko's structural version has been practiced — useful for seeing how a working illustrator simplifies hands under time pressure, which is closer to real manga production speed."},"david_finch_folds":{"title":"How to Draw Clothing and Folds","creator":"David Finch","embed_type":"channel","url":"https://davidfinchart.com/library/","why":"David Finch is a 26-year Marvel/DC veteran (New Avengers, Moon Knight) who now teaches specifically for comic-page production — his folds lesson treats fabric as a storytelling and shading tool, not just texture, which fits manga's high-contrast, tone-driven rendering better than a generic fashion-illustration folds tutorial would."},"david_finch_hair":{"title":"Drawing Hair","creator":"David Finch","embed_type":"channel","url":"https://davidfinchart.com/library/","why":"Included as the 'realistic clump logic' counterpart to Mark Crilley's stylized manga-hair lessons the same week — seeing both a comics-realist and a manga-specific approach prevents hair from becoming either stiff or a copy-paste anime cliché."},"mark_crilley_playlist":{"title":"How to Draw (full tutorial playlist)","creator":"Mark Crilley","embed_type":"playlist","yt_list":"PLCD2CF65888663986","url":"https://www.youtube.com/playlist?list=PLCD2CF65888663986","why":"Crilley is the author of Mastering Manga and has the largest, most consistent manga-specific teaching catalog on YouTube (well over 200 million career views on drawing demos). He wasn't on your original list, but excluding him from a manga curriculum would be like excluding Proko from a figure-drawing one."},"sinix_design_channel":{"title":"Rendering, Shape Language & Value Structure","creator":"Sinix Design","embed_type":"channel","url":"https://www.youtube.com/@sinixdesign","why":"Sinix (Robert Stacy) has taught digital rendering since 2006 and is specifically known for shape-language and value-structure teaching — the exact bridge between 'anatomically correct' and 'reads clearly as a manga character at a glance,' which is the whole point of Phase 3."},"ctrlpaint_playlist":{"title":"Digital Painting Fundamentals (full course)","creator":"Ctrl+Paint (Matt Kohr)","embed_type":"playlist","yt_list":"PLPVQ_imP542_NB3Ruy5Jw8rDjwG7lDcK4","url":"https://www.ctrlpaint.com/library","why":"Chosen specifically for value theory because Kohr teaches principles as software-agnostic — they transfer directly whether you're rendering in Clip Studio Paint, Procreate, or pencil. The alternative (a CSP-specific tutorial) would have taught you a menu, not a skill."},"mark_crilley_manga_faces":{"title":"How to Draw Manga Faces: 2 Different Ways","creator":"Mark Crilley","embed_type":"video","yt_id":"tYdJk8f29x4","url":"https://www.youtube.com/watch?v=tYdJk8f29x4","why":"Deliberately shows two valid manga eye/face approaches instead of one 'correct' style, which matters for finding your own version rather than copying a single YouTuber's face template."},"naoki_saito_playlist":{"title":"Beginner Fundamentals (English-friendly playlist)","creator":"Naoki Saito","embed_type":"playlist","yt_list":"PLLiiluu3zijVBwnpqg2dTqaUm1f8O8Wc-","url":"https://www.youtube.com/playlist?list=PLLiiluu3zijVBwnpqg2dTqaUm1f8O8Wc-","why":"A working professional manga/character artist (Pokémon TCG, Dragalia Lost) whose channel rebuilt itself to 680k+ subscribers after being deleted without warning — he's cited repeatedly as the best teacher for how real Japanese studios actually simplify anatomy into shapes. Some videos are Japanese-audio with visual demonstration or community captions; the drawing process itself needs no translation."},"ahmed_aldoori_poses":{"title":"Drawing Dynamic Poses (Parts 1 & 2)","creator":"Ahmed Aldoori","embed_type":"video","yt_id":"gEKMHFdA5dQ","url":"https://www.youtube.com/watch?v=gEKMHFdA5dQ","why":"A concept artist recommended alongside Sinix and Marco Bucci in the same professional-instructor circles — chosen here because he narrates his *reasoning* live while exaggerating a pose, which is more transferable to your own characters than a static finished-pose gallery."},"david_finch_panels":{"title":"Sketching Figures, Perspective, and Panels","creator":"David Finch","embed_type":"video","yt_id":"L7-kfEwRbu4","url":"https://www.youtube.com/watch?v=L7-kfEwRbu4","why":"One of the only free tutorials by a veteran professional that shows perspective and panel layout being solved *together* in the same thumbnail sketch, rather than as two separate lessons — which is how it actually happens on a real manga page."},"david_finch_buildings":{"title":"Buildings in One-Point Perspective for Comics (Parts 1 & 2)","creator":"David Finch","embed_type":"video","yt_id":"B2Q5UmQJAVg","url":"https://www.youtube.com/watch?v=B2Q5UmQJAVg","why":"Chosen over a generic architecture-perspective tutorial because it's built specifically for comic-panel blocking speed — Finch shows the shortcuts a working artist actually uses under a deadline, not textbook-perfect vanishing-point geometry."},"drawlikeasir_paneling":{"title":"How to Draft and Panel Manga Pages","creator":"DrawlikeaSir (Marcel)","embed_type":"video","yt_id":"UGamHJjKwNw","url":"https://www.youtube.com/watch?v=UGamHJjKwNw","why":"Made by an artist who has published six volumes of his own manga series, so the advice (Z-pattern eye flow, fewer/larger panels, storyboard first) reflects what actually ships, not just page-layout theory. This is the most manga-specific paneling tutorial found in research, ahead of several generic 'comic layout' videos."},"scott_mccloud_ted":{"title":"The Visual Magic of Comics (TED Talk)","creator":"Scott McCloud","embed_type":"video","yt_id":"fXYckRgsdjI","url":"https://www.youtube.com/watch?v=fXYckRgsdjI","why":"McCloud's Understanding Comics essentially invented the modern vocabulary for panel-to-panel transitions and 'closure' (what your brain fills in between panels). This 17-minute talk was chosen over assigning the full book so the concept lands inside a single day, with the book noted as optional further reading."},"david_finch_inking":{"title":"Inking Tools for Comics","creator":"David Finch","embed_type":"channel","url":"https://davidfinchart.com/library/","why":"Covers the actual tool decision (nib pens, brush pens, digital) a working inker makes, rather than assuming you already own a specific pen — the right starting point before Alphonso Dunn's control exercises get re-applied to final line art."},"csp_screentone_official":{"title":"Quick Tip: Screentones","creator":"Clip Studio Paint (official)","embed_type":"video","yt_id":"X8yPpORl460","url":"https://www.youtube.com/watch?v=X8yPpORl460","why":"Straight from the software's own channel, so the menu paths and terminology exactly match what you'll click — chosen over third-party tone tutorials specifically to avoid outdated UI references."},"csp_screentone_manga":{"title":"Screentone Your Manga Like a Pro Mangaka","creator":"Jake Hercy Draws / community","embed_type":"video","yt_id":"RUA9fpG4aH4","url":"https://www.youtube.com/watch?v=RUA9fpG4aH4","why":"Goes further than the official tutorial into manga-specific tone use (cloth, water, sky, mood) rather than just the mechanics of applying a tone layer — the applied, house-style follow-up to the official reference."}},"weeks":[{"week":1,"phase":1,"days":[1,7],"title":"Line Confidence & Basic Shapes","review":{"assessment":"You should now be able to draw a straight line or a smooth curve in one confident pass, without a scratchy, hesitant 'sketchy' stroke — and know the difference the instant you see it on the page.","challenge":"One full page of confident-line studies: 20 superimposed lines, 20 ghosted lines, a table of 15 ellipses, and 3 simple objects (a mug, a book, a box) built entirely from straight lines and ellipses.","revision":"If lines still wobble or stop halfway, redo Days 1–2 before moving on — everything downstream depends on this, and it's the cheapest place in the whole roadmap to fix a habit.","confident":"Confident straight lines and ellipses in one pass, and simple objects built from basic shapes."}},{"week":2,"phase":1,"days":[8,15],"title":"Forms & Perspective","review":{"assessment":"You should be able to look at a flat shape and mentally 'inflate' it into a box, cylinder, or sphere, and place 2–3 of those forms in a scene that reads as one consistent space rather than floating separately.","challenge":"Draw a still life of 4 household objects simplified into boxes/cylinders/spheres, all sitting on one shared ground plane in simple 1-point perspective.","revision":"If objects feel like they're floating or facing random directions, redo the funnels and rough-perspective drills from Day 11–12 — that's a shared-vanishing-point problem, not a drawing-skill problem.","confident":"Boxes, cylinders and spheres in believable perspective, sharing one ground plane and one light logic."}},{"week":3,"phase":1,"days":[16,22],"title":"Construction & Gesture Drawing","review":{"assessment":"Given a 60-second reference pose, you should be able to capture its main flow line and weight distribution — not a perfect figure, just an honest, energetic line that shows what the pose is doing.","challenge":"A full page of 15 one-minute gesture thumbnails from mixed references (at least 3 from an actual manga/anime panel, not just photo refs), circling your 3 strongest.","revision":"If gestures look stiff or symmetrical, redo Day 18's Reilly-abstraction drills — stiffness almost always means you're tracing contour instead of feeling for the line of action.","confident":"A one-minute gesture sketch that captures the energy and balance of a pose, from photo or manga reference."}},{"week":4,"phase":1,"days":[23,30],"title":"Basic Heads & Basic Faces","review":{"assessment":"You should be able to construct a Loomis head from at least 3 different angles from imagination (not copying), and place eyes/nose/mouth in roughly correct proportion on each.","challenge":"A head-construction sheet: the same invented head drawn from front, 3/4, and profile, plus one simple expression (smiling) on the front view. This sheet becomes part of your Day-30 Phase 1 portfolio.","revision":"If the 3/4 view keeps collapsing, redo Day 24's angle drills specifically — it's the hardest of the three and the one most people rush.","confident":"A Loomis-constructed head from three angles, with basic facial features placed in correct proportion."}},{"week":5,"phase":2,"days":[31,37],"title":"Anatomy Basics & Proportions","review":{"assessment":"You should be able to explain out loud (even just to yourself) why the ribcage and pelvis tilt opposite directions in a contrapposto pose, and show that tilt in a construction drawing.","challenge":"Draw one standing figure, 7.5 heads tall, in a relaxed weight-on-one-leg pose, using only the ribcage/pelvis/spine construction method — no outline-tracing allowed.","revision":"If proportions keep drifting (head too big, legs too short), redo Day 31's head-unit measuring drill; that ruler-in-your-eye habit needs repetition, not talent.","confident":"A full standing figure with correctly proportioned ribcage-pelvis-spine construction in a relaxed pose."}},{"week":6,"phase":2,"days":[38,45],"title":"Hands & Feet","review":{"assessment":"You should be able to draw a relaxed open hand and a simple standing foot from construction (mitten-and-block for the hand, wedge-and-block for the foot) without immediately reaching for a photo reference.","challenge":"A hand/feet study sheet: 6 hand poses (open, fist, pointing, holding an object, relaxed, gesturing) and 4 foot angles (front, side, 3/4, from above).","revision":"If fingers all look like sausages of the same length, redo Day 39's knuckle-landmark drill — finger *length variation* reads as 'correct' far more than perfect outlines do.","confident":"Basic hand and foot construction from multiple angles, without tracing a reference."}},{"week":7,"phase":2,"days":[46,52],"title":"Hair & Clothing","review":{"assessment":"You should be able to draw hair as a small number of large clumps following a clear gravity/wind direction, and drape simple fabric with at least 2 correct fold types over a bent limb.","challenge":"Draw one clothed character bust with a manga-style hairstyle, showing folds pulling toward at least one bent joint (elbow or shoulder).","revision":"If hair reads as 'a pile of lines' rather than shapes, redo Day 46 — count your clumps out loud; if you can't count them, neither can the reader's eye.","confident":"Manga-styled hair with clear clump logic, and simple clothing folds that respond to the body underneath."}},{"week":8,"phase":2,"days":[53,60],"title":"Expressions, Lighting & Values","review":{"assessment":"You should be able to render a simple head in 3 flat value blocks (light/mid/shadow) with one consistent light source, and draw at least 4 distinct facial expressions from the same base head.","challenge":"A rendered character bust: one head, one light source, full value structure, plus a 4-panel expression strip (neutral, happy, angry, surprised) using the same construction.","revision":"If shadows appear on the wrong side or contradict each other across the face, redo Day 56 and physically mark your light source with an arrow before you start shading — every time.","confident":"A simply-rendered character head with one consistent light source, and a set of clearly distinct expressions."}},{"week":9,"phase":3,"days":[61,67],"title":"Manga Style & Character Design","review":{"assessment":"You should be able to look at your realistic head studies from Phase 1–2 and deliberately push them toward a manga style — simplified planes, iconic eye shapes — while keeping the underlying proportions correct.","challenge":"Character Design Sheet #1: 5–8 thumbnail concept sketches for your first original character, narrowed down to one refined design with a clear silhouette.","revision":"If every thumbnail has the same silhouette, redo Day 64's shape-language drill with more exaggerated shape choices (circle vs. triangle vs. square) before refining anything.","confident":"An original manga-style character design with a distinct, readable silhouette, from your own thumbnails."}},{"week":10,"phase":3,"days":[68,75],"title":"Dynamic Poses, Perspective & Composition","review":{"assessment":"You should be able to push a gesture pose into an exaggerated, foreshortened action pose (a punch or a jump) while keeping the anatomy readable, and place a character inside a simple perspective composition with a clear focal point.","challenge":"A 3-character dynamic lineup: your character from Week 9 plus two new original characters, all in different exaggerated action poses on one page.","revision":"If foreshortened limbs look broken rather than 'pointing at the viewer,' redo Day 69's overlap-and-size drills — foreshortening is 90% correct overlap, not perspective math.","confident":"Three original characters in dynamic, foreshortened poses with correct anatomy and a clear focal point."}},{"week":11,"phase":3,"days":[76,82],"title":"Backgrounds & Storytelling","review":{"assessment":"You should be able to place one of your characters inside a simple perspective background at a consistent scale and light direction, and lay out a full page of story beats as rough panel thumbnails before drawing a single clean line.","challenge":"A full rough thumbnail draft of your entire 5–10 page one-shot — every page, every panel, stick-figure loose — plus one finished character-in-background panel from that draft.","revision":"If your thumbnails read confusingly out of order, redo Day 80's Z-pattern panel-flow drill on just the worst page before touching anything else.","confident":"A full rough thumbnail draft of a multi-page manga story, plus one character correctly placed inside a background."}},{"week":12,"phase":3,"days":[83,90],"title":"Inking, Screentones & Final Project","review":{"assessment":"By Day 90 you should have a complete, inked and toned final portfolio — not perfect, but finished, consistent, and entirely your own construction from Day 1's lines onward.","challenge":"The full Day 90 final project (see Final Project tab): 3 characters, turnaround, expression sheet, hand sheet, dynamic pose sheet, background scene, cover illustration, and a 5–10 page one-shot manga, inked and toned.","revision":"If you're behind, prioritize finishing over polishing — a complete, slightly-rough 90-day portfolio teaches you more than a polished 60-day one you never finish. Extend into a Week 13 if you need it; the roadmap is a floor, not a deadline.","confident":"A complete, self-inked, self-toned original manga one-shot with a matching character portfolio."}}],"days":[{"id":1,"week":1,"phase":1,"title":"Superimposed & Ghosted Lines","objective":"Build the muscle memory for one confident stroke instead of a scratchy, hesitant line.","resources":["drawabox_l1"],"assignment":"Drawabox Lesson 1: Superimposed Lines (2 pages) and Ghosted Lines (2 pages). Ghost the motion 2-3 times above the page before your pen touches down, then commit — one pass, no going back to fix it.","time":"60–90 min","mistakes":["Scratchy back-and-forth strokes instead of one pass","Slowing down or wobbling mid-line","Going back over a line to 'fix' it"],"checklist":["Did I commit to each line without redrawing it?","Are my lines mostly straight from start to end?","Did I ghost the motion before committing?","Did I fill both full pages?"],"outcome":"A full page of single-pass lines that are visibly straighter and more confident than your very first attempt today."},{"id":2,"week":1,"phase":1,"title":"Ghosted Planes","objective":"Extend single-line confidence into connected multi-line shapes.","resources":["drawabox_l1"],"assignment":"Warm up with 10 more ghosted lines, then Drawabox's Ghosted Planes exercise: 10 planes, including some rotated off the horizontal.","time":"60–90 min","mistakes":["Corners that overshoot or don't meet","Drawing planes too small to see your own mistakes","Rushing the ghosting/planning step"],"checklist":["Do my plane corners meet cleanly?","Did I ghost every line before drawing it?","Are opposite sides of each plane roughly parallel?"],"outcome":"Planes with clean, decisive corners that look intentional rather than corrected after the fact."},{"id":3,"week":1,"phase":1,"title":"Table of Ellipses","objective":"Train smooth, consistent ellipses — the foundation of every cylinder and rounded form to come.","resources":["drawabox_l1"],"assignment":"Drawabox's Table of Ellipses: fill the full grid, drawing each ellipse 2–3 times in one continuous motion before lifting your pen.","time":"45–60 min","mistakes":["Pointy ends instead of smooth curves","Drawing from the wrist only instead of the whole arm","Ellipses that lose symmetry partway through"],"checklist":["Am I drawing from my shoulder/elbow, not just my wrist?","Do my ellipses close without a pointy overlap?","Is the width consistent across each one?"],"outcome":"A full page of rounder, smoother ellipses with no pointy 'eye' shapes at the seams."},{"id":4,"week":1,"phase":1,"title":"Ellipses in Motion: Funnels","objective":"Understand how an ellipse's angle changes as it rotates through space — the logic behind every cylinder, limb and neck you'll draw.","resources":["drawabox_l1"],"assignment":"Drawabox's Funnels exercise: draw the full set, keeping every ellipse aimed at one shared central axis.","time":"45–60 min","mistakes":["Ellipses that don't share one consistent central axis","Ellipses widening instead of narrowing as the funnel narrows","Ignoring the center line entirely"],"checklist":["Do all my ellipses point toward the same central axis?","Does the ellipse degree narrow correctly as the funnel narrows?"],"outcome":"A funnel where every ellipse clearly belongs to the same consistent 3D tube."},{"id":5,"week":1,"phase":1,"title":"From Shapes to Simple Objects","objective":"Combine straight lines and ellipses into simple, recognizable everyday objects.","resources":["drawabox_l1","marcbrunet_lineart"],"assignment":"Draw 6 simple objects (mug, book, box, can, phone, bottle) using only straight lines and ellipses — no shading, no detail beyond the basic construction.","time":"60 min","mistakes":["Jumping to outline without planning proportions first","Over-detailing instead of keeping it simple","Skipping the ghosted plan before each shape"],"checklist":["Did I plan proportions before starting each object?","Is each object recognizable at a glance?","Did every line stay confident, not sketchy?"],"outcome":"Six clean, simple objects that look intentional — proof that lines and ellipses alone can read as real things."},{"id":6,"week":1,"phase":1,"title":"Plotted Perspective & Organic Arcs","objective":"Get a first feel for a horizon line and a single vanishing point, and practice smooth arcing lines for later gesture work.","resources":["drawabox_l1"],"assignment":"Drawabox's Plotted Perspective mini-exercise, then 3 pages of arcing lines at varying curvature and length.","time":"60 min","mistakes":["Lines that wobble mid-arc instead of one smooth pass","Treating the vanishing point as optional","Uneven spacing between practice arcs"],"checklist":["Do all my perspective lines actually converge at one point?","Are my arcs smooth in a single confident pass?"],"outcome":"A first working sense of perspective space, and arcs smooth enough to reuse in gesture drawing next week."},{"id":7,"week":1,"phase":1,"title":"Week 1 Review — Confident-Line Portfolio Page","objective":"Consolidate the week's line, plane and ellipse drills into one confident portfolio page.","resources":["drawabox_l1"],"assignment":"One sitting, one page: 20 superimposed lines, 20 ghosted lines, a 15-ellipse table, and the 3 strongest objects from Day 5, redrawn fresh.","time":"90–120 min","mistakes":["Rushing just to finish instead of keeping each line confident","Comparing this page to professional work instead of your own Day 1","Skipping the self-check because the page 'feels done'"],"checklist":["Can I draw a straight line or smooth curve in one confident pass?","Do I know the difference between a confident line and a sketchy one on sight?","Am I ready to move on, or does Days 1–2 need a repeat?"],"outcome":"A single page that is visibly more confident than Day 1 — keep it; you'll want the comparison later."},{"id":8,"week":2,"phase":1,"title":"From Shapes to Forms: Boxes","objective":"Understand how a flat square becomes a solid 3D box using converging edges — the starting point of all construction drawing.","resources":["drawabox_l2"],"assignment":"Draw 15 boxes from different angles. Ghost a 2D shape first, then extrude 3 edges per box to give it depth.","time":"60–90 min","mistakes":["Edge sets that don't stay parallel or consistently converge","Boxes that look flat because every edge is the same length","Skipping the ghosted plan before extruding"],"checklist":["Do the 3 sets of parallel edges look parallel or convincingly convergent?","Does the box read as solid, not flat?","Did I vary the angles across the 15 boxes?"],"outcome":"A page of boxes that read as solid 3D forms from multiple angles, not flat diamonds."},{"id":9,"week":2,"phase":1,"title":"Cylinders in Space","objective":"Apply last week's ellipse skill to draw a cylinder that holds a consistent width as it travels through space.","resources":["drawabox_l2"],"assignment":"Draw 10 cylinders at varying angles and lengths, capping each end with a correctly matched ellipse.","time":"60 min","mistakes":["End ellipses that don't match each other's degree","Cylinders that taper by accident","Drawing the tube before establishing both end ellipses"],"checklist":["Do both end ellipses share the same width/degree logic?","Does the cylinder hold a consistent diameter unless I meant to taper it?"],"outcome":"Cylinders that read as solid tubes in space, not two disconnected ellipses joined by lines."},{"id":10,"week":2,"phase":1,"title":"Spheres & Basic Light Logic","objective":"Learn how one light source creates a terminator line, core shadow and cast shadow on the simplest possible form.","resources":["drawabox_l2"],"assignment":"Draw 6 spheres. Mark a light-source arrow on each BEFORE shading, then add simple 3-value shading (light / core shadow / cast shadow) to 3 of them.","time":"60 min","mistakes":["Shading before marking the light source","Treating the shadow edge as a hard outline instead of a soft value shift","Cast shadow pointing the wrong direction relative to the light"],"checklist":["Did I draw a light-source arrow before shading?","Does my cast shadow point away from the light, along the ground?"],"outcome":"A sphere that reads as a solid ball under one clear light source, not a flat circle with a dark smudge."},{"id":11,"week":2,"phase":1,"title":"1-Point Perspective","objective":"Use a horizon line and single vanishing point well enough to place a box convincingly inside a room.","resources":["drawabox_l1"],"assignment":"Draw a simple room in 1-point perspective: floor, back wall, and one box sitting inside it, all sharing one vanishing point.","time":"75 min","mistakes":["Receding lines that don't actually meet at the vanishing point","Horizon line that shifts partway through the drawing","Objects that ignore the perspective you already set up"],"checklist":["Do all my receding lines meet at one vanishing point?","Is my horizon line consistent across the whole drawing?"],"outcome":"A simple room that convincingly recedes into the distance from a single vanishing point."},{"id":12,"week":2,"phase":1,"title":"2-Point Perspective","objective":"Extend to two vanishing points for objects viewed at an angle — the perspective type most manga panels actually use.","resources":["drawabox_l1"],"assignment":"Draw 3 boxes of different sizes in 2-point perspective, all sharing the same horizon line and two vanishing points (even if one lands off the page).","time":"75 min","mistakes":["Vanishing points that drift between objects","Boxes that don't share one horizon line","Edges drawn freehand instead of aimed at the vanishing point"],"checklist":["Do all 3 boxes share the exact same two vanishing points?","Do vertical edges stay perfectly vertical?"],"outcome":"Multiple objects in 2-point perspective that clearly share one consistent space."},{"id":13,"week":2,"phase":1,"title":"Form Intersections","objective":"Practice how forms overlap and occlude each other believably — a cylinder poking through a box, a sphere resting in a bowl shape.","resources":["drawabox_l2"],"assignment":"Draw 6 pairs of overlapping forms (box+cylinder, sphere+box, cylinder+cylinder), marking clearly which surface sits in front at every overlap.","time":"60 min","mistakes":["Drawing both forms fully, then erasing overlaps sloppily","Losing track of which surface is actually in front","Intersections that ignore either form's established perspective"],"checklist":["Is it clear which form is in front at every overlap?","Do both forms still look individually correct in perspective?"],"outcome":"Confident intersections where two simple forms clearly occupy the same 3D space."},{"id":14,"week":2,"phase":1,"title":"Combining Forms Into an Object","objective":"Build one complete invented object entirely from boxes, cylinders and spheres in perspective.","resources":["drawabox_l1","drawabox_l2"],"assignment":"Design and construct one simple invented object (a toy robot, teapot, or desk lamp) using at least 3 different basic forms, sharing one perspective and one light source.","time":"75 min","mistakes":["Forms that don't share the same perspective space","Light direction that shifts between forms on the same object","Adding detail before the construction underneath is solid"],"checklist":["Do all the forms in my object share one consistent perspective?","Is my light source consistent across every form?"],"outcome":"One fully invented object, built entirely from your own construction — not traced or copied."},{"id":15,"week":2,"phase":1,"title":"Week 2 Review — Perspective Still Life","objective":"Consolidate forms and perspective into the week's portfolio piece.","resources":["drawabox_l1","drawabox_l2"],"assignment":"Draw a still life of 4 objects, each simplified into boxes/cylinders/spheres, all sitting on one shared ground plane in simple 1-point perspective.","time":"90–120 min","mistakes":["Rushing the ghosted planning step under time pressure","Forgetting to share one horizon line across all 4 objects","Letting light direction drift between objects"],"checklist":["Can I mentally 'inflate' a flat shape into a box, cylinder or sphere?","Do my 4 objects share one ground plane and one light logic?","Am I ready for gesture drawing, or does perspective need another day?"],"outcome":"A still life where 4 separate objects clearly share one believable 3D space."},{"id":16,"week":3,"phase":1,"title":"What Is Gesture? Line of Action","objective":"Learn to find and draw the single 'line of action' that captures a pose's core energy before any detail.","resources":["proko_gesture_howto","proko_gesture_playlist"],"assignment":"Watch Proko's 'How to Draw Gesture,' then draw 10 quick sketches (60–90 sec each) from any photo reference, using one single flowing line per pose before anything else.","time":"60 min","mistakes":["Drawing contour/outline instead of one flowing action line","Spending too long per pose","Using straight, stiff lines instead of curves"],"checklist":["Is there one clear dominant curve in each sketch?","Did I stay under 90 seconds per pose?"],"outcome":"Ten quick sketches that each show one clear, energetic line of action."},{"id":17,"week":3,"phase":1,"title":"Flow Lines & C/S Curves","objective":"Refine gesture lines using C-curves and S-curves that show the body's natural rhythm and weight shift.","resources":["proko_gesture_playlist","ethan_becker_channel"],"assignment":"15 gesture sketches (60–90 sec each). Before each one, label it a C-curve or S-curve pose in your head, then draw to match.","time":"60–75 min","mistakes":["Curves that are too symmetrical or generic","Ignoring which side of the body compresses vs. stretches","Drawing too slowly and losing the pose's energy"],"checklist":["Can I point to the compression side and the stretch side of each pose?","Do my curves feel intentional, not random?"],"outcome":"Gesture sketches with a clear compression/stretch relationship, not just generic wavy lines."},{"id":18,"week":3,"phase":1,"title":"Reilly Abstraction: Constructive Gesture","objective":"Break the torso into two connected rhythm masses — a ribcage 'bean' and a pelvis 'bucket' — instead of one blob.","resources":["proko_gesture_playlist","lovelifedrawing_shapes"],"assignment":"10 gesture sketches using a bean-shaped ribcage and bucket-shaped pelvis connected by a curving spine line, from mixed reference poses.","time":"75 min","mistakes":["Torso drawn as one solid blob with no separation","Ribcage and pelvis pointing the same direction even in a twisting pose","Spine line drawn perfectly straight"],"checklist":["Are ribcage and pelvis clearly two separate, connected shapes?","Does the spine curve to connect them naturally?"],"outcome":"Gestures with a visibly twisting, three-dimensional torso instead of a flat blob."},{"id":19,"week":3,"phase":1,"title":"Gesture + Basic Forms Overlay","objective":"Combine gesture flow lines with earlier form skills, treating limbs as tapered cylinders.","resources":["proko_gesture_playlist","drawabox_l2"],"assignment":"8 gesture sketches, then add simple cylinder/box limb construction on top of your 4 favorites.","time":"75 min","mistakes":["Construction that kills the original gesture's energy","Limbs drawn as straight tubes with no taper","Forgetting the joints where forms actually connect"],"checklist":["Does my construction still preserve the original gesture's flow?","Do my limb cylinders taper naturally toward the joints?"],"outcome":"Sketches that carry both energy (gesture) and structure (form) at the same time."},{"id":20,"week":3,"phase":1,"title":"Timed Gesture Practice Session","objective":"Build speed and instinct through volume against a real timer — the single highest-leverage gesture drill there is.","resources":["lovelifedrawing_gesture","moderndayjames_channel"],"assignment":"One 30-minute timed session: 20 poses at 60 seconds, then 10 poses at 30 seconds, using Love Life Drawing's practice approach.","time":"45 min (30 min drawing + review)","mistakes":["Stopping to fix mistakes mid-timer instead of moving on","Tensing up and slowing down as the timer gets shorter","Skipping the warm-up before the 30-second round"],"checklist":["Did I complete every pose within its time limit, even imperfectly?","Did my 30-second poses stay loose rather than freezing up?"],"outcome":"Visibly looser, faster gesture marks by the end of the session than at the start."},{"id":21,"week":3,"phase":1,"title":"Gesture, Weight & Balance","objective":"Learn to check a pose's line of gravity so standing figures don't look like they're about to topple over.","resources":["proko_gesture_playlist","lovelifedrawing_shapes"],"assignment":"10 standing-pose gesture sketches. Drop a straight vertical 'plumb line' from the neck pit down to check whether the weight is actually balanced over the feet.","time":"60 min","mistakes":["Weight balanced over neither foot","Weight-bearing leg drawn perfectly straight (real ones rarely are)","Skipping the plumb-line check entirely"],"checklist":["Does my plumb line land on or between a foot, not off to the side?","Is there a clear weight-bearing leg versus a relaxed leg?"],"outcome":"Standing poses that feel physically balanced and grounded instead of precariously tipping."},{"id":22,"week":3,"phase":1,"title":"Week 3 Review — Gesture Thumbnail Page","objective":"Consolidate a week of gesture practice into the week's portfolio page.","resources":["proko_gesture_playlist","lovelifedrawing_gesture"],"assignment":"One page of 15 one-minute gesture thumbnails from mixed references — at least 3 from an actual manga or anime panel. Circle your 3 strongest.","time":"60–75 min","mistakes":["Choosing only 'safe' static poses instead of dynamic ones","Spending more than 90 seconds per thumbnail","Skipping the manga-reference poses"],"checklist":["Can I capture a pose's flow and weight in about 60 seconds?","Do at least 3 of my thumbnails come from manga/anime reference?","Which of the 15 is genuinely my strongest, and why?"],"outcome":"A page of 15 thumbnails with 3 clear standouts — proof gesture is becoming instinct, not effort."},{"id":23,"week":4,"phase":1,"title":"Loomis Head: Sphere & Cranial Mass","objective":"Learn the core Loomis construction — a sphere plus a flat side-plane 'ramus' block for the jaw — the skeleton for every head you'll draw.","resources":["proko_loomis_playlist"],"assignment":"Draw 8 Loomis head spheres from a front-facing angle, adding the cranial cross-lines (browline, centerline) and the jaw ramus block to each.","time":"60–75 min","mistakes":["Cross-lines drawn flat instead of wrapping the sphere's curve","Jaw block attached at the wrong height","Treating the sphere as the whole head instead of just the cranium"],"checklist":["Do my centerline and browline actually curve around the sphere?","Is the jaw block attached at a consistent, correct height?"],"outcome":"A Loomis head sphere with correctly wrapped guidelines, ready to hold facial features."},{"id":24,"week":4,"phase":1,"title":"The Head at Different Angles","objective":"Rotate the Loomis construction through 3/4 and profile views without it falling apart.","resources":["proko_loomis_playlist"],"assignment":"Draw the same invented head from front, 3/4, and profile, keeping the cross-line logic consistent across all three angles.","time":"75–90 min","mistakes":["3/4 guideline that doesn't curve with the rotated sphere","Profile view losing the cranial mass behind the face","Each angle looking like a different person"],"checklist":["Do all three angles read as the same head rotating, not three different heads?","Does my 3/4 guideline correctly compress toward the far side?"],"outcome":"The same constructed head, recognizable across three different angles."},{"id":25,"week":4,"phase":1,"title":"Facial Landmarks","objective":"Learn standard guideline placement for eyes, brows, nose base and chin using head-unit proportions.","resources":["proko_loomis_playlist"],"assignment":"On 5 fresh Loomis heads, mark the eyeline, browline, base-of-nose line and chin using the 'eyes at the halfway point' rule — no final features yet.","time":"45–60 min","mistakes":["Eyes placed too high (the most common beginner error)","Ignoring the halfway-point rule entirely","Guidelines drawn flat instead of wrapping the head's curve"],"checklist":["Are my eyes at the vertical halfway point of the head, not higher?","Do the guidelines stay consistent across all 5 heads?"],"outcome":"Correctly proportioned facial guideline placement you can now do from memory."},{"id":26,"week":4,"phase":1,"title":"Basic Facial Features","objective":"Construct generic (non-stylized) eyes, nose and mouth on Day 25's guidelines — an accurate base before Phase 3 stylizes it.","resources":["proko_loomis_playlist"],"assignment":"Add simple constructed eyes, nose, and mouth to 4 of your Day 25 heads, in both front and 3/4 view.","time":"60–75 min","mistakes":["Eyes drawn as flat almond shapes with no eyeball/lid structure","Nose drawn as a floating triangle disconnected from the face","Mouth ignoring the curve of the jaw beneath it"],"checklist":["Do my eyes sit inside eye sockets, not floating on the surface?","Does my nose connect to the browline rather than floating?"],"outcome":"A believable, correctly proportioned realistic face — your accuracy baseline before Phase 3 stylizes it."},{"id":27,"week":4,"phase":1,"title":"Head Tilts & Simple Foreshortening","objective":"Practice tilting the head up and down, where most beginner head drawings actually fall apart.","resources":["proko_loomis_playlist"],"assignment":"Draw 6 heads tilted up and 6 tilted down, keeping the cross-line guidelines curving correctly through each tilt.","time":"60–75 min","mistakes":["Guidelines that stay flat/horizontal regardless of tilt","Features that ignore the tilt and sit 'flat-on' anyway","Treating up/down tilt as a separate skill instead of the same sphere logic extended"],"checklist":["Do my guidelines curve correctly for an up-tilt versus a down-tilt?","Do features follow the tilted guidelines rather than sitting flat?"],"outcome":"Heads that convincingly look up or down, not just side to side."},{"id":28,"week":4,"phase":1,"title":"Simple Expressions","objective":"Move eyebrows, eyes and mouth together, not separately, to construct 3 basic realistic expressions on your accurate head base.","resources":["proko_loomis_playlist"],"assignment":"Draw the same constructed head 3 times — neutral, smiling, surprised — changing brow, eye and mouth together as one coordinated unit each time.","time":"60 min","mistakes":["Changing only the mouth and leaving the brows neutral (the #1 reason expressions look fake)","Copying a reference expression without understanding which muscles moved","Over-exaggerating before the basic version is solid"],"checklist":["Did brows, eyes AND mouth all change together for each expression?","Is each expression clearly readable at a glance?"],"outcome":"Three clearly distinct, believable expressions built from one consistent head construction."},{"id":29,"week":4,"phase":1,"title":"Combine Gesture Body + Constructed Head","objective":"Merge Week 3's gesture-body work with Week 4's head construction into one simple, complete figure.","resources":["proko_gesture_playlist","proko_loomis_playlist"],"assignment":"Draw 4 simple full figures: a gesture-based body topped with a properly constructed head, matching the head's tilt to the body's action line.","time":"75–90 min","mistakes":["Head construction that ignores the body's tilt or action line","Body gesture losing its energy once a 'careful' head is added","Neck drawn as a straight, rigid cylinder"],"checklist":["Does the head's tilt match the direction the body's gesture is moving?","Did the body keep its gesture energy after adding the head?"],"outcome":"A simple complete figure where head and body clearly belong to the same pose."},{"id":30,"week":4,"phase":1,"title":"Phase 1 Review — Full Construction Study Sheet","objective":"Demonstrate everything from Phase 1 on one consolidated sheet, and honestly self-assess before Phase 2 begins.","resources":["proko_gesture_playlist","proko_loomis_playlist","drawabox_l1"],"assignment":"One full portfolio sheet: 3 gesture figures with constructed heads, plus a small perspective still life in the corner. Then write 3 honest sentences about your single weakest Phase 1 skill.","time":"120 min","mistakes":["Skipping the honest self-assessment because it feels uncomfortable","Carrying an unresolved Week 1 line-confidence issue straight into Phase 2","Comparing this page to a professional's work instead of your own Day 1"],"checklist":["Can I honestly name my single weakest Phase 1 skill?","Would I be comfortable starting Phase 2 tomorrow, or do a few review days make sense first?","Have I kept every dated page so far — you'll want the before/after later"],"outcome":"A completed Phase 1 portfolio sheet, and a clear, honest sense of which foundation skill still needs attention going into Phase 2."},{"id":31,"week":5,"phase":2,"title":"Figure Proportions","objective":"Learn to measure a figure in 'head units' (roughly 7.5–8 heads tall) so proportions stop drifting.","resources":["marcbrunet_male_body","marcbrunet_female_body","proko_anatomy_course"],"assignment":"Draw 4 standing gesture figures (mix of body types), then measure each in head-units using your own drawn head as the ruler, adjusting until each reads as 7.5–8 heads tall.","time":"60–75 min","mistakes":["Guessing proportions instead of measuring","Head drawn too large relative to the body (very common)","Head-unit size drifting within one figure"],"checklist":["Did I use my own drawn head as the measuring unit?","Does my figure read as roughly 7.5–8 heads tall?"],"outcome":"Figures with proportions that hold up under a ruler check, not just ones that 'look about right.'"},{"id":32,"week":5,"phase":2,"title":"Skeleton Basics: Ribcage & Pelvis","objective":"Simplify the ribcage into an egg/barrel form and the pelvis into a bucket form — the two masses that drive all torso construction.","resources":["proko_anatomy_course","lovelifedrawing_shapes"],"assignment":"Draw the ribcage barrel and pelvis bucket separately, 5 times each from different angles, before connecting them with a spine.","time":"60 min","mistakes":["Ribcage drawn as a flat oval with no thickness","Pelvis drawn too small relative to the ribcage","Ignoring each form's own internal perspective"],"checklist":["Does my ribcage read as a 3D barrel, not a flat oval?","Is my pelvis roughly proportional in size to the ribcage?"],"outcome":"Two independently solid torso masses, ready to be connected and twisted next."},{"id":33,"week":5,"phase":2,"title":"Ribcage–Pelvis Relationship: Contrapposto","objective":"Learn how ribcage and pelvis tilt in opposite directions in a natural standing pose — the single biggest lever for believable figures.","resources":["proko_anatomy_course","marcbrunet_male_body"],"assignment":"Draw 6 torsos in contrapposto, exaggerating the opposite-tilt relationship between ribcage and pelvis before dialing it back to natural.","time":"75 min","mistakes":["Ribcage and pelvis tilting the same direction","Torso that reads as rigid or frozen instead of relaxed","Forgetting the spine's curve connecting the two masses"],"checklist":["Do my ribcage and pelvis clearly tilt in opposite directions?","Does the connecting spine curve naturally between them?"],"outcome":"Torsos with a natural, weight-shifted contrapposto feel instead of stiff symmetry."},{"id":34,"week":5,"phase":2,"title":"Shoulder Girdle & Clavicles","objective":"Understand how collarbones and shoulder blades ride on top of the ribcage independently, letting arms move without distorting the torso.","resources":["proko_anatomy_course"],"assignment":"Draw 5 torsos with the clavicle line added as a slightly curved line to each shoulder point, in both a relaxed and a raised-arm pose.","time":"60 min","mistakes":["Clavicles drawn as a perfectly straight line","Shoulders that don't shift position when an arm raises","Shoulder width copy-pasted identically across every figure regardless of build"],"checklist":["Does my clavicle line curve slightly rather than sit perfectly straight?","Do my shoulders visibly shift when I raise an arm?"],"outcome":"Shoulders that move believably with the arm instead of staying frozen to the ribcage."},{"id":35,"week":5,"phase":2,"title":"Leg Construction","objective":"Build the leg from two tapering cylinder-forms (thigh, calf) connected at a believable knee landmark.","resources":["proko_anatomy_course"],"assignment":"Draw 8 legs in varying poses (standing, bent, stepping), each built from a thigh cylinder and calf cylinder meeting at the knee.","time":"60–75 min","mistakes":["Thigh and calf drawn as one straight tube with no taper","Knee landmark placed inconsistently across poses","Ankle drawn too thin relative to the calf above it"],"checklist":["Do my thigh and calf cylinders each taper correctly?","Is my knee landmark placed at a consistent point across poses?"],"outcome":"Legs that hold weight and bend believably, built from clear, tapering forms."},{"id":36,"week":5,"phase":2,"title":"Arm Construction","objective":"Build the arm from upper-arm and forearm cylinders meeting at the elbow, keeping the forearm's twisting range in mind.","resources":["proko_anatomy_course","marcbrunet_male_body"],"assignment":"Draw 8 arms in varying poses (relaxed, bent, reaching), each built from two tapering cylinders meeting at the elbow.","time":"60–75 min","mistakes":["Elbow landmark placed inconsistently across poses","Forearm drawn as a straight tube ignoring its natural taper","Hand added as an afterthought, disconnected from the wrist"],"checklist":["Is my elbow landmark placed consistently across poses?","Does my forearm show a natural taper toward the wrist?"],"outcome":"Arms that bend and reach believably, ready to attach the hands you'll build next week."},{"id":37,"week":5,"phase":2,"title":"Week 5 Review — Full Figure From Construction","objective":"Consolidate anatomy basics into one full-figure construction demonstrating the week's core skills.","resources":["proko_anatomy_course"],"assignment":"One standing figure, 7.5 heads tall, weight-on-one-leg pose, built purely from ribcage/pelvis/spine construction — no outline tracing allowed.","time":"90–120 min","mistakes":["Reverting to outline-tracing under pressure instead of trusting the construction","Proportions drifting without a measuring check","Rushing the contrapposto relationship to save time"],"checklist":["Can I explain out loud why ribcage and pelvis tilt opposite ways in this pose?","Does my figure hold up to a head-unit ruler check?"],"outcome":"A full standing figure with correctly proportioned ribcage-pelvis-spine construction in a relaxed pose."},{"id":38,"week":6,"phase":2,"title":"Hand Basic Form","objective":"Simplify the hand into a mitten shape — palm block plus thumb wedge — before any fingers are added.","resources":["proko_hands"],"assignment":"Draw 10 mitten-hand shapes from different angles: just the palm block and thumb wedge, no fingers yet.","time":"60 min","mistakes":["Palm drawn as a flat 2D shape with no thickness","Thumb attached at the wrong point or angle","Treating the hand as symmetrical when it isn't"],"checklist":["Does my palm block read as a 3D form, not a flat shape?","Is my thumb wedge attached near the base of the palm, not the fingers?"],"outcome":"A confident, three-dimensional palm-and-thumb base ready to hold fingers."},{"id":39,"week":6,"phase":2,"title":"Finger Construction","objective":"Add fingers as simple tapering cylinder segments with correctly placed knuckle landmarks.","resources":["proko_hands","marcbrunet_hands_feet"],"assignment":"Add fingers to 6 of yesterday's mitten hands, using 3 cylinder segments per finger, and deliberately varying each finger's length.","time":"60–75 min","mistakes":["All fingers drawn the same length (real fingers vary noticeably)","Knuckle bends that don't align across the hand","Fingers drawn as flat tapered triangles instead of cylinders"],"checklist":["Do my fingers vary in length rather than all matching?","Do the knuckle landmarks stay aligned across the hand?"],"outcome":"Hands with fingers that read as cylindrical and correctly varied in length."},{"id":40,"week":6,"phase":2,"title":"Hand Gesture & Dynamic Poses","objective":"Apply gesture-drawing energy to the hand itself, capturing quick, expressive hand poses.","resources":["proko_hands"],"assignment":"12 quick (60–90 sec) gesture sketches of hands in different poses — relaxed, pointing, gripping, open — from photo reference.","time":"45–60 min","mistakes":["Treating the hand as rigid instead of finding its gesture line first","Spending too long per pose and losing energy","Ignoring the wrist's contribution to the overall pose"],"checklist":["Did I find one flowing gesture line before adding structure?","Did I stay within the time limit per pose?"],"outcome":"Hand sketches that feel alive and quickly captured, not stiffly labored over."},{"id":41,"week":6,"phase":2,"title":"Hands Interacting With Objects","objective":"Practice a hand gripping or holding something — exactly where most beginner hands go wrong.","resources":["proko_hands","marcbrunet_hands_feet"],"assignment":"Draw a hand holding 4 different objects (a pencil, a cup, a phone, a sword or weapon relevant to manga), focusing on where fingers compress around the object.","time":"60–75 min","mistakes":["Fingers that don't actually make contact with the object's surface","Object drawn first, hand forced awkwardly around it after","Ignoring the fat-pad compression where fingers grip"],"checklist":["Do my fingers actually contact and wrap the object's surface?","Did I construct the underlying hand before adding the object?"],"outcome":"Hands that convincingly grip rather than float near their objects."},{"id":42,"week":6,"phase":2,"title":"Foot Basic Form","objective":"Simplify the foot into a wedge/box construction before adding toes or detail.","resources":["proko_feet_playlist"],"assignment":"Draw 10 basic foot wedges from different angles: front, side, 3/4, and from above.","time":"60 min","mistakes":["Foot drawn as a flat 2D shape with no arch or volume","Ankle bones ignored or placed symmetrically (they aren't — the inner ankle sits higher)","Foot length inconsistent with the leg it's attached to"],"checklist":["Does my foot wedge show volume and a visible arch?","Are my inner and outer ankle bones at different heights?"],"outcome":"A basic three-dimensional foot form, ready for toes and perspective work."},{"id":43,"week":6,"phase":2,"title":"Foot in Perspective & Ankle Relationship","objective":"Draw the foot correctly foreshortened from tricky angles and connect it believably to the ankle and leg.","resources":["proko_feet_playlist"],"assignment":"Draw 8 feet in perspective-heavy angles (viewed from the front and from above), attaching each to a simple lower-leg cylinder.","time":"75 min","mistakes":["Foot drawn at full side-view length even when viewed from the front","Ankle attached at an inconsistent point on the foot wedge","Toes added before the underlying wedge perspective is solid"],"checklist":["Does my foot correctly foreshorten when viewed from the front or above?","Is the ankle attached at a consistent point relative to the foot wedge?"],"outcome":"Feet that hold up in perspective-heavy angles, not just the easy side view."},{"id":44,"week":6,"phase":2,"title":"Combine Hands + Feet Into Full Figures","objective":"Integrate this week's hand and foot construction into complete gesture figures from earlier weeks.","resources":["proko_hands","proko_feet_playlist"],"assignment":"Draw 4 full gesture figures, adding fully constructed hands and feet instead of simplified shapes or hidden-behind-the-back poses.","time":"90 min","mistakes":["Hiding hands or feet off-frame to avoid drawing them","Hands/feet more detailed than the rest of the figure, breaking visual consistency","Scale mismatch between hand/foot size and the rest of the body"],"checklist":["Did I draw the hands and feet fully instead of hiding them?","Are they in correct scale relative to the rest of the figure?"],"outcome":"Complete figures where hands and feet no longer feel like the weak link."},{"id":45,"week":6,"phase":2,"title":"Week 6 Review — Hand & Foot Study Sheet","objective":"Consolidate hand and foot construction into the week's portfolio sheet.","resources":["proko_hands","proko_feet_playlist"],"assignment":"A hand/feet study sheet: 6 hand poses (open, fist, pointing, holding an object, relaxed, gesturing) and 4 foot angles (front, side, 3/4, from above).","time":"90–120 min","mistakes":["Reaching for a photo reference instead of trusting construction","Rushing finger-length variation under time pressure","Skipping the trickier foreshortened foot angles"],"checklist":["Can I draw an open hand and a standing foot from construction, without a reference?","Do my fingers vary naturally in length?"],"outcome":"Basic hand and foot construction from multiple angles, without tracing a reference."},{"id":46,"week":7,"phase":2,"title":"Hair as Shapes & Clumps","objective":"Learn to see hair as a small number of large clump-shapes, not individual strands.","resources":["mark_crilley_playlist","david_finch_hair"],"assignment":"Draw 8 hairstyles on top of existing Loomis heads, using no more than 6–8 large clump-shapes per style — count your clumps out loud as you draw.","time":"60–75 min","mistakes":["Drawing dozens of thin individual strands instead of shapes","Hair that ignores the skull's volume underneath it","Clumps at wildly inconsistent scale within one hairstyle"],"checklist":["Can I count 6–8 distinct clump-shapes in each hairstyle?","Does the hair still show the skull's volume underneath?"],"outcome":"Hair that reads as clear, intentional shapes at a glance, not a tangle of lines."},{"id":47,"week":7,"phase":2,"title":"Hair Flow & Gravity","objective":"Direct all hair clumps to follow one consistent gravity or wind direction, so hair reads as physically real.","resources":["mark_crilley_playlist"],"assignment":"Draw 6 hairstyles, each with a gravity or wind direction arrow drawn first, keeping every clump obedient to that one direction.","time":"60 min","mistakes":["Clumps pointing in random, disagreeing directions","Ignoring gravity entirely on hanging sections of hair","Wind-blown hair that looks static rather than mid-motion"],"checklist":["Did I mark a direction arrow before drawing the hair?","Do all my clumps agree with that one direction?"],"outcome":"Hairstyles that feel like they're responding to one real physical force."},{"id":48,"week":7,"phase":2,"title":"Manga-Style Hair Stylization","objective":"Push realistic hair-clump logic toward manga's iconic spiky and flowing shapes while keeping it attached to a real skull.","resources":["mark_crilley_manga_faces","naoki_saito_playlist"],"assignment":"Draw 3 manga-style hairstyles on the same head — one spiky shonen-style, one flowing shoujo-style, one short practical style — comparing how far each pushes the clump shapes.","time":"75 min","mistakes":["Spikes that don't connect back to a believable hairline","Copying a specific character's exact hairstyle instead of building your own from clump logic","Losing the skull's volume under an exaggerated style"],"checklist":["Does each stylized hairstyle still connect to a believable hairline?","Could I explain the clump logic behind each style if asked?"],"outcome":"Three distinct manga hairstyles on one head, each built from understood clump logic rather than copied lines."},{"id":49,"week":7,"phase":2,"title":"Fabric Folds Fundamentals","objective":"Learn the core fold types — spiral, drop, zigzag, pipe/diaper folds — that make clothing look worn rather than painted on.","resources":["david_finch_folds"],"assignment":"Draw a simple sleeve or pant leg bent at a joint, 5 times, deliberately practicing one named fold type each time.","time":"60–75 min","mistakes":["Folds drawn as random scribbly lines instead of named, logical shapes","Fabric drawn perfectly smooth with zero folds anywhere","Folds that ignore where the body actually bends underneath"],"checklist":["Can I name which fold type I was practicing in each of the 5 drawings?","Do my folds originate from an actual bend point in the body?"],"outcome":"Five sleeve/pant-leg studies with clearly identifiable, logical fold types."},{"id":50,"week":7,"phase":2,"title":"Folds on a Moving Figure","objective":"Apply fold logic to a full gesture figure, showing tension folds pulling toward joints and compression folds bunching at bends.","resources":["david_finch_folds"],"assignment":"Take 3 gesture figures from earlier weeks and clothe them, adding tension folds at stretched areas and compression folds at bent areas.","time":"75 min","mistakes":["Identical fold treatment at both tension and compression points","Clothing that hides the gesture underneath entirely","Folds added as an afterthought instead of following the body's actual movement"],"checklist":["Can I point to a clear tension fold and a clear compression fold on each figure?","Is the original gesture still visible through the clothing?"],"outcome":"Clothed figures where the folds actually explain what the body underneath is doing."},{"id":51,"week":7,"phase":2,"title":"Simple Manga Outfit Construction","objective":"Design and construct one complete, simple manga-appropriate outfit on a full figure.","resources":["david_finch_folds","mark_crilley_playlist"],"assignment":"Draw one full figure wearing a complete simple outfit (blazer or jacket, shirt, bottom, shoes), applying this week's fold and hair skills together.","time":"90 min","mistakes":["Outfit pieces that don't sit on the body's construction underneath","Forgetting shoe/foot consistency from Week 6","Overcomplicating the outfit before the simple version is solid"],"checklist":["Does the outfit clearly sit on top of a constructed body, not float around it?","Did I include correctly constructed hands, feet, hair and folds together?"],"outcome":"One complete, believable clothed character combining this week's hair and fold skills."},{"id":52,"week":7,"phase":2,"title":"Week 7 Review — Clothed Character Bust","objective":"Consolidate hair and clothing into the week's portfolio piece.","resources":["mark_crilley_playlist","david_finch_folds"],"assignment":"One clothed character bust with manga-style hair, showing folds pulling toward at least one bent joint (elbow or shoulder).","time":"75–90 min","mistakes":["Rushing hair clump-counting under time pressure","Folds that don't clearly originate from a joint","Hairstyle disconnected from the skull underneath"],"checklist":["Does my hair read as clump-shapes with a clear direction?","Do my folds respond to an actual bend in the body?"],"outcome":"Manga-styled hair with clear clump logic, and simple clothing folds that respond to the body underneath."},{"id":53,"week":8,"phase":2,"title":"Facial Expression Fundamentals","objective":"Learn how eyebrows, eyes and mouth combine in specific, namable ways to build the 6 basic emotions.","resources":["proko_loomis_playlist","sinix_design_channel"],"assignment":"Draw 6 heads, one per basic emotion (happy, sad, angry, surprised, disgusted, afraid), changing brow, eye and mouth together each time.","time":"75–90 min","mistakes":["Relying only on the mouth to sell the emotion","Mixing signals from two different emotions in one face","Expressions too subtle to read at a glance"],"checklist":["Can I identify each emotion from the drawing alone, with no label?","Did brows, eyes and mouth all agree with each other?"],"outcome":"Six clearly readable basic expressions, each built from a coordinated brow/eye/mouth combination."},{"id":54,"week":8,"phase":2,"title":"Exaggerated Manga Expressions","objective":"Push realistic expressions toward manga's exaggerated, often chibi-style emotional shorthand.","resources":["mark_crilley_playlist","naoki_saito_playlist"],"assignment":"Redraw 4 of yesterday's expressions in exaggerated manga style (huge sparkling eyes for joy, a comedic anger mark, a gasping surprised mouth), then draw one full chibi-proportioned figure showing one emotion.","time":"75 min","mistakes":["Exaggerating everything equally instead of pushing one dominant feature hardest","Chibi proportions that ignore the same head-construction logic underneath","Over-decorating instead of actually exaggerating the expression, hurting readability"],"checklist":["Did I pick one dominant feature to exaggerate per expression?","Is my chibi figure built on the same construction logic as a normal figure, just compressed?"],"outcome":"Expressive, readable manga-exaggerated faces, plus a first chibi figure."},{"id":55,"week":8,"phase":2,"title":"Value Fundamentals","objective":"Learn the value scale and the difference between form shadow (on the object) and cast shadow (on the ground or other objects).","resources":["ctrlpaint_playlist"],"assignment":"Shade a 5-step value scale from white to black, then shade one sphere and one cube showing form shadow and cast shadow clearly separated.","time":"60 min","mistakes":["Value scale steps that aren't evenly spaced","Confusing form shadow and cast shadow, or blending them into one shape","Using only pure black and pure white, losing the middle values"],"checklist":["Are my 5 value steps evenly spaced from white to black?","Can I clearly point to the form shadow versus the cast shadow on each object?"],"outcome":"A clean value scale and two simple forms with clearly separated form and cast shadows."},{"id":56,"week":8,"phase":2,"title":"Light Source Logic on a Head","objective":"Apply value logic to a constructed head, keeping one consistent light source throughout.","resources":["ctrlpaint_playlist","sinix_design_channel"],"assignment":"Shade 3 heads from different angles, marking the light-source arrow on each BEFORE shading, using only 3 values: light, mid, shadow.","time":"75 min","mistakes":["Shadows that contradict each other across different features of the same face","Forgetting to mark the light source before starting","Using too many value steps and losing clarity"],"checklist":["Did I mark my light source before shading, every time?","Do all the shadows on one head agree with a single light direction?"],"outcome":"Three heads shaded with one clearly consistent light source each."},{"id":57,"week":8,"phase":2,"title":"Full Figure in Flat Manga-Style Value Blocks","objective":"Render a full clothed figure using flat, simplified value blocks the way manga uses black/white/gray before tone is even added.","resources":["sinix_design_channel","ctrlpaint_playlist"],"assignment":"Take one figure from Week 7 and render it in exactly 3 flat value blocks (black, white, one gray), no gradients — thinking about where a screentone would eventually go.","time":"75–90 min","mistakes":["Using soft gradients instead of committing to flat, clean value shapes","Ignoring the light source established earlier in the drawing","Adding more than 3 values before the simple version reads clearly"],"checklist":["Do my value shapes stay flat and clean, without soft gradients?","Does the figure still read clearly in just black/white/gray?"],"outcome":"A figure rendered in bold, flat manga-style value blocks that would already read clearly in print."},{"id":58,"week":8,"phase":2,"title":"Rim Light & Dramatic Manga Lighting","objective":"Add a rim light — a backlight tracing the character's silhouette — for the dramatic, high-contrast lighting common on manga covers.","resources":["sinix_design_channel"],"assignment":"Shade 2 character busts with a strong rim light in addition to the main light source, exaggerating the contrast for a cover-illustration feel.","time":"60–75 min","mistakes":["Rim light applied evenly all around instead of only the edge facing the backlight","Rim light so strong it destroys the readability of the main lighting","Forgetting the rim light needs its own light-source logic, opposite the key light"],"checklist":["Does my rim light only appear on the edge facing away from the main light?","Does the piece still read clearly despite the added drama?"],"outcome":"Two character busts with dramatic, cover-quality rim lighting layered on top of solid base shading."},{"id":59,"week":8,"phase":2,"title":"Practice: Full Character With Expression + Values","objective":"Combine this week's expression and value skills into one polished practice piece before Phase 2's final review.","resources":["sinix_design_channel","mark_crilley_playlist"],"assignment":"Draw and shade one full-body character showing a clear expression, correct proportions, clothing with folds, and 3-value flat rendering.","time":"120 min","mistakes":["Skipping earlier construction steps under the pressure of making a 'nicer' finished piece","Value rendering that ignores the established light source","An expression that doesn't match the energy of the pose"],"checklist":["Did I still build this from construction, not skip straight to outline?","Does the expression match the energy of the pose?"],"outcome":"One complete, confidently rendered character — a genuine step up from Day 1 of this phase."},{"id":60,"week":8,"phase":2,"title":"Phase 2 Review — Rendered Character Sheet","objective":"Demonstrate everything from Phase 2 on one consolidated sheet, and self-assess honestly before Phase 3 begins.","resources":["proko_anatomy_course","sinix_design_channel"],"assignment":"One full portfolio sheet: a complete rendered character (front view), a hand/foot study inset, and a 3-expression strip, all on one page. Then write 3 honest sentences about your weakest Phase 2 skill.","time":"150 min","mistakes":["Rushing the sheet just to 'be done with Phase 2' instead of showing your actual best current work","Skipping the honest self-assessment","Moving into manga stylization with fundamentally incorrect proportions still unresolved"],"checklist":["Can I honestly name my single weakest Phase 2 skill?","Is my figure anatomy solid enough that stylizing it on purpose in Phase 3 will read as a choice, not a mistake?"],"outcome":"A completed Phase 2 portfolio sheet, and a clear, honest sense of which figure-drawing skill still needs attention going into Phase 3."},{"id":61,"week":9,"phase":3,"title":"What Makes 'Manga Style'?","objective":"Understand stylization (line weight, simplified planes, iconic features) as a deliberate set of choices, not a shortcut around anatomy.","resources":["naoki_saito_playlist","sinix_design_channel"],"assignment":"Take one Day 26 realistic head and redraw it 3 times, each time simplifying ONE specific thing further (line count, eye detail, or nose detail), labeling what you removed each time.","time":"75 min","mistakes":["Simplifying randomly instead of deliberately","Removing so much detail the head stops reading as a face","Treating 'manga style' as only about the eyes"],"checklist":["Can I name exactly what I simplified in each of the 3 versions?","Does the most simplified version still read clearly as a face?"],"outcome":"A clear, personal understanding of what 'simplification' actually means, demonstrated across 3 real steps."},{"id":62,"week":9,"phase":3,"title":"Manga Eyes Deep-Dive","objective":"Learn the internal structure of manga eyes — iris shape, highlight placement, lid weight — so they can be varied deliberately, not copied.","resources":["mark_crilley_manga_faces","naoki_saito_playlist"],"assignment":"Draw 10 different manga eye studies, varying shape, highlight count/placement and lid thickness, noting which reads as which personality trait.","time":"75 min","mistakes":["Drawing the same eye shape 10 times with only surface details changed","Highlights placed randomly instead of matching a light-source logic","Forgetting the eye still sits inside a socket on a 3D head"],"checklist":["Do my 10 eyes show genuinely different shapes and structures, not just copies?","Does each highlight placement make sense with a light source?"],"outcome":"A personal reference sheet of 10 varied manga eye designs you actually understand the construction of."},{"id":63,"week":9,"phase":3,"title":"Style Exploration: 3 Manga Face Styles","objective":"Convert the same constructed head into 3 different manga sub-styles, proving the underlying construction is style-independent.","resources":["naoki_saito_playlist","mark_crilley_manga_faces"],"assignment":"Draw the same head 3 times in 3 different manga styles (a sharp shonen-action style, a soft shoujo style, a comedic chibi-adjacent style), keeping the same Loomis proportions underneath each.","time":"90 min","mistakes":["Proportions changing between styles instead of only the surface rendering","Styles that end up indistinguishable from each other","Abandoning the underlying construction entirely for the most exaggerated style"],"checklist":["Do all 3 heads still share the same underlying proportions?","Are the 3 styles clearly, distinctly different from one another?"],"outcome":"Proof that one solid construction can support multiple manga styles — a real, reusable skill."},{"id":64,"week":9,"phase":3,"title":"Character Design: Silhouette & Shape Language","objective":"Learn how basic shapes — circle, triangle, square — communicate different personality traits at a glance, before any detail is added.","resources":["sinix_design_channel"],"assignment":"Design 9 silhouettes for an imaginary character (3 circle-based, 3 triangle-based, 3 square-based), filled solid black with no internal detail. Note which shape best fits your intended personality.","time":"75 min","mistakes":["Every silhouette ending up roughly the same overall shape regardless of the base chosen","Adding internal line detail instead of keeping it a pure solid silhouette","Picking a shape at random instead of connecting it to a specific personality trait"],"checklist":["Are my 9 silhouettes genuinely different from each other in overall shape?","Can I explain why my chosen shape fits the character's personality?"],"outcome":"Nine genuinely distinct silhouettes, and a clear understanding of why shape reads before detail does."},{"id":65,"week":9,"phase":3,"title":"Character Design: Value-Based Thinking","objective":"Design a character's value distribution — where black, white and gray sit — before adding color, since manga is fundamentally a value medium.","resources":["sinix_design_channel","ctrlpaint_playlist"],"assignment":"Take your Day 64 silhouette winner and design 3 different black/white/gray value-distribution options for its costume, picking the one that reads most clearly at thumbnail size.","time":"75 min","mistakes":["Designing in color first and only translating to value as an afterthought","All 3 options ending up an even 50/50 black-white split with no dominant value","Not checking how the design reads when shrunk to thumbnail size"],"checklist":["Does one value clearly dominate in each of my 3 options, rather than an even split?","Did I check how each option reads at a small, thumbnail size?"],"outcome":"A character costume design chosen specifically for how well its value pattern reads in black and white."},{"id":66,"week":9,"phase":3,"title":"Designing Character #1","objective":"Combine silhouette, value design and face style into your first complete original character concept.","resources":["naoki_saito_playlist","sinix_design_channel"],"assignment":"Draw 5–8 thumbnail concept sketches for your first original manga character, then pick and refine one into a clean concept sketch (face and costume, front view).","time":"90–120 min","mistakes":["Refining the first thumbnail instead of genuinely comparing multiple options","Losing the strong silhouette from Day 64 during refinement","Designing the costume without considering the value pattern from Day 65"],"checklist":["Did I generate genuinely different thumbnail options before picking one?","Does my refined character keep a clear, readable silhouette and value pattern?"],"outcome":"Your first complete original manga character concept, chosen from real options rather than your first idea."},{"id":67,"week":9,"phase":3,"title":"Week 9 Review — Character Design Sheet #1","objective":"Consolidate this week's manga-style and character-design skills into a finished first character sheet.","resources":["naoki_saito_playlist","sinix_design_channel"],"assignment":"Character Design Sheet #1: your 5–8 thumbnails plus the one refined design, cleaned up as a presentable sheet.","time":"90–120 min","mistakes":["Presenting only the final design without the thumbnail process that shows your thinking","Second-guessing the design choice at the last minute","Skipping value-pattern consideration on the cleaned-up version"],"checklist":["Can I look at 3 thumbnails and explain why I didn't pick them?","Does the final sheet clearly show both the process and the result?"],"outcome":"An original manga-style character design with a distinct, readable silhouette, presented from your own thumbnails."},{"id":68,"week":10,"phase":3,"title":"Dynamic Action Lines","objective":"Learn to exaggerate a gesture's line of action specifically for manga's higher-energy visual language.","resources":["ethan_becker_channel","ahmed_aldoori_poses"],"assignment":"Take 8 of your calmer gesture sketches from Phase 1–2 and redraw each with the line of action pushed 30–50% further — same pose, more exaggerated energy.","time":"75 min","mistakes":["Exaggerating the outline/detail instead of the core line of action itself","Pushing the pose so far the anatomy becomes unreadable","Losing the pose's original weight and balance while exaggerating"],"checklist":["Is it clearly the same pose, just pushed further?","Does the pose still feel balanced despite the exaggeration?"],"outcome":"Eight poses with noticeably more manga-appropriate energy than their calmer originals."},{"id":69,"week":10,"phase":3,"title":"Foreshortening for Dramatic Poses","objective":"Learn the overlap-and-size logic that makes a punch or kick convincingly point toward the viewer instead of looking broken.","resources":["david_finch_panels","ahmed_aldoori_poses"],"assignment":"Draw 6 foreshortened poses (a fist punching toward camera, a kick, a lunge), focusing on which body parts overlap and which shrink in size closer to the viewer.","time":"90 min","mistakes":["Drawing the limb at full 'unforeshortened' length out of habit","Ignoring which part of the limb should overlap and hide behind another","Treating foreshortening as a perspective-math problem instead of an overlap-and-size one"],"checklist":["Does the foreshortened limb clearly overlap the body part behind it?","Does the nearest part of the limb read as noticeably larger than the far part?"],"outcome":"Foreshortened poses that read as 'pointing at the viewer' instead of anatomically broken."},{"id":70,"week":10,"phase":3,"title":"Speed Lines & Motion Indication","objective":"Learn manga's graphic vocabulary for indicating motion — speed lines, motion blur shapes, impact marks.","resources":["drawlikeasir_paneling","mark_crilley_playlist"],"assignment":"Take 3 of your dynamic poses from this week and add appropriate motion indicators: speed lines behind a running figure, an impact burst at a punch's point of contact, blur streaks on a fast-moving limb.","time":"60 min","mistakes":["Speed lines that don't actually follow the direction of motion","Overusing motion effects until the character itself is hard to see","Impact marks placed away from the actual point of contact"],"checklist":["Do my speed lines follow the actual direction of movement?","Is the character still clearly readable underneath the motion effects?"],"outcome":"Three dynamic poses with motion effects that clearly communicate speed and impact."},{"id":71,"week":10,"phase":3,"title":"Designing Character #2 + Dynamic Pose","objective":"Design a second original character built specifically around an action-oriented role, then pose them dynamically.","resources":["sinix_design_channel","ahmed_aldoori_poses"],"assignment":"Repeat Day 66's thumbnail-to-refined-design process for Character #2 (more action/combat-oriented than Character #1), then draw them in one dynamic action pose using this week's skills.","time":"120 min","mistakes":["Character #2 ending up too visually similar to Character #1","Costume design that would be impractical to draw consistently in dynamic action","Choosing the pose before the character design is finalized, causing rework"],"checklist":["Is Character #2 clearly visually distinct from Character #1 in silhouette?","Does the costume hold up in a dynamic action pose without falling apart?"],"outcome":"A second original character, action-posed, visually distinct from your first."},{"id":72,"week":10,"phase":3,"title":"Composition Fundamentals","objective":"Learn rule-of-thirds, leading lines, and focal-point placement for single-illustration composition.","resources":["sinix_design_channel"],"assignment":"Sketch 4 thumbnail compositions (under 2 minutes each) for the same character-in-a-scene idea, deliberately placing the focal point at a different rule-of-thirds intersection each time, then pick your strongest.","time":"60 min","mistakes":["Focal point placed dead-center in every thumbnail regardless of intent","No clear leading lines directing the eye toward the focal point","Spending too long per thumbnail and losing the point of fast iteration"],"checklist":["Is my focal point clearly placed at a rule-of-thirds intersection, not dead center?","Is there at least one leading line guiding the eye toward it?"],"outcome":"Four fast compositional thumbnails and one clear favorite, chosen for genuine compositional strength."},{"id":73,"week":10,"phase":3,"title":"Perspective in Manga Panels","objective":"Apply Phase 1's perspective skills specifically to dramatic manga panel choices — low angles, high angles, Dutch tilts.","resources":["david_finch_panels","david_finch_buildings"],"assignment":"Draw the same simple scene (a character standing in a doorway) 3 times: a low 'hero' angle, a high 'vulnerable' angle, and a Dutch-tilt 'unease' angle, keeping perspective construction honest in each.","time":"90 min","mistakes":["Extreme angles drawn 'by feel' without an actual vanishing point or horizon line underneath","All 3 angles feeling emotionally similar despite the different camera choice","Dutch tilt applied to the drawing itself instead of to the underlying perspective construction"],"checklist":["Does each angle still use honest perspective construction, not guesswork?","Do the 3 angles genuinely feel emotionally different from each other?"],"outcome":"Three panel-ready angle choices, each built on real perspective and each communicating a different feeling."},{"id":74,"week":10,"phase":3,"title":"Designing Character #3 + Full Trio Pose Practice","objective":"Complete your trio of original characters, then practice posing all three together.","resources":["ahmed_aldoori_poses","ethan_becker_channel"],"assignment":"Design Character #3 (a supporting/contrast role, with a different body type or age than #1 and #2), then draw all 3 characters together in one rough lineup, each in a distinct dynamic pose.","time":"120 min","mistakes":["Character #3 sharing a body type or silhouette too similar to #1 or #2","All 3 characters posed identically instead of showing distinct personalities","Scale or proportion mismatches between the 3 characters placed together"],"checklist":["Are all 3 characters visually distinct from each other in body type and silhouette?","Does each character's pose reflect their individual personality?"],"outcome":"Your complete cast of 3 original characters, together in one dynamic lineup for the first time."},{"id":75,"week":10,"phase":3,"title":"Week 10 Review — 3-Character Dynamic Lineup","objective":"Consolidate dynamic posing, foreshortening and composition into the week's portfolio piece.","resources":["ahmed_aldoori_poses","sinix_design_channel"],"assignment":"Refine Day 74's rough lineup into a cleaner page with correct anatomy and a clear focal point, applying Day 72's composition principles to how the 3 characters are arranged.","time":"120 min","mistakes":["Rushing anatomy accuracy in favor of 'cooler-looking' but broken poses","Forgetting composition lessons when arranging all 3 characters on one page","Inconsistent scale between the characters"],"checklist":["Can I push a gesture into an exaggerated, foreshortened pose while keeping anatomy readable?","Is there a clear focal point among the 3 characters?"],"outcome":"Three original characters in dynamic, foreshortened poses with correct anatomy and a clear focal point."},{"id":76,"week":11,"phase":3,"title":"Simple Interior Background","objective":"Apply 1–2-point perspective to a simple interior space a manga scene might actually use.","resources":["david_finch_buildings","drawabox_l1"],"assignment":"Draw a simple bedroom or classroom interior in 1-point perspective, including at least 3 pieces of furniture built from Phase 1's basic forms.","time":"90 min","mistakes":["Furniture that ignores the room's established vanishing point","Overloading the background with detail before the basic perspective box is solid","Forgetting a consistent light source for the whole room"],"checklist":["Does all my furniture share the room's single vanishing point?","Is there one consistent light source across the whole space?"],"outcome":"A simple, believable interior space your characters could actually stand inside."},{"id":77,"week":11,"phase":3,"title":"Exterior Background Basics","objective":"Apply 2-point perspective to a simplified street or cityscape background.","resources":["david_finch_buildings"],"assignment":"Draw a simplified street scene (2–3 buildings, a road, basic signage) in 2-point perspective, keeping detail minimal and shapes clean.","time":"90 min","mistakes":["Buildings that don't share the same two vanishing points","Over-detailing every window and brick instead of implying texture simply","Losing horizon-line consistency established at the start"],"checklist":["Do all my buildings share the same two vanishing points and horizon line?","Did I imply detail and texture simply rather than rendering every brick?"],"outcome":"A simplified but structurally correct street background, ready to place a character inside."},{"id":78,"week":11,"phase":3,"title":"Combining Character + Background","objective":"Place a character convincingly inside a background at correct scale, perspective and light direction.","resources":["david_finch_panels"],"assignment":"Take one of your 3 characters and place them inside either Day 76 or Day 77's background, matching their eye-level to the room's horizon line and their lighting to the scene's light source.","time":"90 min","mistakes":["Character's eye-level ignoring the background's actual horizon line, making them look like they're floating or sinking","Character lighting direction contradicting the background's established light source","Character drawn at a scale inconsistent with the furniture or buildings around them"],"checklist":["Does my character's eye-level align with the background's horizon line?","Does the character's lighting match the background's light source?"],"outcome":"Your first character-in-background panel that reads as one consistent, believable space."},{"id":79,"week":11,"phase":3,"title":"Comic Storytelling Grammar","objective":"Learn Scott McCloud's panel-to-panel transition types and the idea of 'closure' — what the reader's brain fills in between panels.","resources":["scott_mccloud_ted"],"assignment":"Watch the TED talk, then take a simple 4-beat story idea (character enters room → notices something → reacts → acts) and sketch it as 4 rough panels, labeling which transition type connects each pair.","time":"60–75 min","mistakes":["Panels that skip so much information the reader can't fill the gap","Panels that show near-identical moments with barely any change","Ignoring transition type entirely and just drawing 'what happens next' without intention"],"checklist":["Can I name the transition type between each pair of panels?","Would a reader seeing only these 4 panels understand the story beat?"],"outcome":"A clear, intentional 4-panel story beat with labeled transitions — proof you're now thinking in sequential art, not just single images."},{"id":80,"week":11,"phase":3,"title":"Paneling & Page Layout Fundamentals","objective":"Learn real manga page-layout principles: panel shapes, gutters, Z-pattern reading flow, and the 'fewer, bigger panels' rule.","resources":["drawlikeasir_paneling"],"assignment":"Design 4 different panel-layout grids for the same 5-beat story sequence, applying the Z-pattern eye-flow principle, then pick your clearest layout.","time":"75 min","mistakes":["Layouts with too many small, equally-sized panels that flatten the story's pacing","Panel order that doesn't actually follow a clean Z-pattern, confusing reading order","Choosing a layout for its 'cool factor' rather than its clarity"],"checklist":["Does my chosen layout follow a clear Z-pattern reading flow?","Are my most important story beats given the biggest panels?"],"outcome":"Four layout options and one clear winner, chosen specifically for reading clarity."},{"id":81,"week":11,"phase":3,"title":"Thumbnail Your One-Shot","objective":"Rough-thumbnail your entire 5–10 page one-shot manga before drawing a single clean line, using everything learned this week.","resources":["drawlikeasir_paneling","scott_mccloud_ted"],"assignment":"Write a one-paragraph story summary for your one-shot (using your 3 designed characters), then thumbnail every page as loose, stick-figure-level panels — speed over polish.","time":"120–150 min","mistakes":["Trying to make thumbnails 'clean' instead of fast and disposable","Starting finished art before the whole story is thumbnailed","Forcing a story that needs 20 pages into 5, losing clarity"],"checklist":["Is every page of my one-shot thumbnailed, even roughly?","Could a stranger follow the basic story from thumbnails alone?"],"outcome":"A complete rough draft of your entire manga story in thumbnail form — the hardest part of Phase 3, now done."},{"id":82,"week":11,"phase":3,"title":"Week 11 Review — Full Thumbnail Draft","objective":"Consolidate backgrounds and storytelling into the week's portfolio piece.","resources":["drawlikeasir_paneling","david_finch_panels"],"assignment":"Finalize your full rough thumbnail draft from Day 81, then clean up one character-in-background panel from Day 78 to near-finished quality.","time":"120 min","mistakes":["Continuing to revise the story instead of locking it in for Week 12's production phase","Perfectionism on thumbnails that only need to be clear, not pretty","Skipping the one 'proof of quality' finished panel"],"checklist":["Is my full one-shot thumbnailed page by page?","Do I have at least one finished, near-final-quality panel to gauge my current skill level?"],"outcome":"A full rough thumbnail draft of a multi-page manga story, plus one character correctly placed inside a background."},{"id":83,"week":12,"phase":3,"title":"Inking Fundamentals","objective":"Learn line-weight variation and tool control for confident, print-ready ink lines.","resources":["alphonso_dunn_penink","david_finch_inking"],"assignment":"Ink 3 of your existing pencil sketches, using thicker lines for outer silhouettes and shadow edges, and thinner lines for interior detail.","time":"90 min","mistakes":["Uniform line weight everywhere, making the image feel flat","Inking too fast and losing control of the line","Inking with no pencil underneath to guide it, at this early stage"],"checklist":["Do my outer silhouette lines read as thicker than my interior detail lines?","Do my inked lines stay as confident and controlled as Week 1's line-confidence training?"],"outcome":"Three inked pieces with intentional, readable line-weight variation."},{"id":84,"week":12,"phase":3,"title":"Screentone Fundamentals","objective":"Apply screentone — dot-pattern shading — to communicate value, material and mood the way real manga does.","resources":["csp_screentone_official","csp_screentone_manga"],"assignment":"Take one inked piece from Day 83 and apply 3 different tone densities to represent shadow, a mid-tone material like fabric, and a mood-setting background tone.","time":"75–90 min","mistakes":["Using the same single tone density for every different material or mood","Applying tone in a way that fights the underlying value structure from Week 8","Over-toning until the piece feels muddy instead of clean"],"checklist":["Did I use at least 2 distinct tone densities for different purposes?","Does the toning still respect the light source and value structure underneath?"],"outcome":"One fully-toned piece that reads with real manga-style shading logic."},{"id":85,"week":12,"phase":3,"title":"Final Project: Turnaround + Expression Sheet + Hand Sheet","objective":"Produce three of the eight final-project deliverables using every skill built so far.","resources":["proko_hands","naoki_saito_playlist"],"assignment":"Draw Character #1's full turnaround (front / 3–4 / side / back), a 6-expression sheet, and a 6-pose hand sheet, all inked.","time":"150–180 min","mistakes":["Turnaround views that don't actually match each other in proportion","Expression sheet reusing the same 1–2 exaggerated features on every expression","Hand-sheet poses that are all very similar instead of showing real variety"],"checklist":["Do all 4 turnaround views clearly show the same character?","Are my 6 expressions genuinely distinct from each other?"],"outcome":"Three completed, inked final-project deliverables: turnaround, expression sheet, and hand sheet."},{"id":86,"week":12,"phase":3,"title":"Final Project: Dynamic Pose Sheet + Background Scene","objective":"Produce two more final-project deliverables.","resources":["ahmed_aldoori_poses","david_finch_buildings"],"assignment":"Draw a dynamic pose sheet (3–4 action poses of any of your 3 characters) and one finished background scene with a character correctly placed inside it, both inked and toned.","time":"150–180 min","mistakes":["Pose-sheet poses that don't build on Week 10's foreshortening and action-line work","Background scene rushed relative to the character detail, feeling unfinished by comparison","Character-background integration issues resurfacing from Day 78"],"checklist":["Do my dynamic poses clearly build on Week 10's exaggeration and foreshortening skills?","Does the background feel like a finished scene, not a rushed afterthought?"],"outcome":"Two more completed final-project deliverables: dynamic pose sheet and background scene."},{"id":87,"week":12,"phase":3,"title":"Final Project: Cover Illustration","objective":"Produce the cover-illustration deliverable — a single, composition-strong hero image for your one-shot.","resources":["sinix_design_channel","david_finch_panels"],"assignment":"Using Week 10's composition skills, design and finish one cover illustration featuring your main character(s), fully inked and toned with dramatic, rim-light-informed lighting.","time":"150–180 min","mistakes":["Skipping the thumbnail-composition step and going straight to final line art","A cover composition with no clear single focal point","Rendering or toning that doesn't match the energy of the pose chosen"],"checklist":["Did I thumbnail at least 2–3 composition options before committing?","Is there one unmistakable focal point in the final cover?"],"outcome":"A finished cover illustration — the single image most people will judge your whole project by first."},{"id":88,"week":12,"phase":3,"title":"Final Project: One-Shot Pages, Part 1","objective":"Produce clean, finished pages from your Day 81 thumbnails — the first half of the one-shot.","resources":["alphonso_dunn_penink","csp_screentone_manga"],"assignment":"Take your thumbnails and produce clean pencils, inks and tone for the first half of your one-shot's pages, roughly page 1 through the midpoint.","time":"180+ min (can split across the day)","mistakes":["Deviating significantly from the Day 81 thumbnail layout mid-page, causing pacing problems","Polishing panel 1 to perfection while leaving later panels rushed","Inconsistent character proportions or style page to page, compared to your turnaround sheet"],"checklist":["Am I following my Day 81 thumbnail layout, adjusting only where clearly needed?","Do characters stay visually consistent with your Day 85 turnaround sheet?"],"outcome":"The first half of your one-shot manga, fully finished: pencilled, inked, and toned."},{"id":89,"week":12,"phase":3,"title":"Final Project: One-Shot Pages, Part 2 + Lettering","objective":"Finish the remaining pages and add basic dialogue lettering and sound-effect text.","resources":["alphonso_dunn_penink","drawlikeasir_paneling"],"assignment":"Finish inking and toning the remaining pages, then add simple speech bubbles and 2–3 sound-effect lettering moments, using this week's paneling and flow principles.","time":"180+ min (can split across the day)","mistakes":["Speech bubbles placed in an order that breaks the Z-pattern reading flow","Sound-effect lettering that doesn't match the visual energy of the action it represents","Rushing the final pages noticeably compared to the earlier, more-practiced ones"],"checklist":["Do my speech bubbles read in a clear, natural order?","Is my complete one-shot now fully inked, toned, and lettered start to finish?"],"outcome":"A complete, finished 5–10 page one-shot manga — inked, toned, and lettered."},{"id":90,"week":12,"phase":3,"title":"Final Review — Assemble Complete Portfolio","objective":"Assemble every final-project deliverable into one complete portfolio and honestly assess 90 days of growth.","resources":["proko_gesture_playlist","naoki_saito_playlist"],"assignment":"Lay out all 8 final deliverables together. Place your very first Day 1 and Day 7 pages next to today's work, and write a short honest reflection: what improved most, what still needs the most work, and a realistic plan for the next 90 days.","time":"120–150 min","mistakes":["Skipping the Day 1 comparison because early work feels embarrassing (it's the single most motivating exercise in the whole roadmap)","Treating Day 90 as 'finished forever' instead of the end of one structured cycle","Writing a vague reflection instead of naming specific next skills"],"checklist":["Is every one of the 8 final deliverables complete?","Did I actually compare today's work to Day 1?","Do I have a specific, named plan for what comes after Day 90?"],"outcome":"A complete 90-day manga portfolio, an honest sense of your real growth, and a concrete plan for what to build next."}],"finalProject":{"title":"The Day 90 Portfolio","intro":"These eight pieces aren't a Day-90 surprise — you've been building toward every one of them since Week 9. Character designs start Week 9, get posed dynamically in Week 10, get backgrounds in Week 11, and only get inked/toned/assembled in Week 12. Day 90 is assembly and polish, not a cold start.","deliverables":[{"name":"3 Original Manga Characters","built_on_days":[66,71,74],"description":"A visually distinct cast: a primary character (Week 9), an action-oriented second character (Week 10), and a contrasting supporting character with a different body type or age (Week 10). Distinct silhouettes, not palette-swaps of one design."},{"name":"Character Turnaround","built_on_days":[85],"description":"Character #1 drawn from front, 3/4, side, and back — all four views clearly the same person, same proportions, same construction."},{"name":"Expression Sheet","built_on_days":[28,53,54,85],"description":"6 distinct expressions of Character #1, each built from a coordinated brow/eye/mouth change, not just a different mouth on a static face."},{"name":"Hand Sheet","built_on_days":[38,39,40,41,85],"description":"6 hand poses in construction-correct perspective: relaxed, fist, pointing, holding an object, gesturing, gripping."},{"name":"Dynamic Pose Sheet","built_on_days":[68,69,74,86],"description":"3–4 exaggerated, foreshortened action poses showing off Week 10's line-of-action and foreshortening work."},{"name":"Background Scene","built_on_days":[76,77,78,86],"description":"One finished interior or exterior scene in correct perspective, with a character correctly integrated at matching scale, eye-level and light direction."},{"name":"Cover Illustration","built_on_days":[72,87],"description":"One composition-strong hero image, thumbnailed first, then fully inked and toned with dramatic, rim-light-informed lighting — the single image that represents the whole project."},{"name":"5–10 Page One-Shot Manga","built_on_days":[79,80,81,88,89],"description":"A complete short story using your 3 characters: thumbnailed (Week 11), then pencilled, inked, toned and lettered (Week 12) start to finish."}],"reality_check":"A genuinely complete, consistent, entirely-your-own-construction portfolio at Day 90 is a real, achievable, and honestly impressive outcome for 90 days from zero. It is the finish line of a strong foundation — not the finish line of becoming a professional mangaka. That takes years of continued, deliberate practice beyond this roadmap. Treat Day 90 as the end of cycle one, not the end of the journey."},"badges":[{"id":"first_steps","name":"First Steps","icon":"pencil","description":"Complete Day 1.","condition":{"type":"day","day":1}},{"id":"line_warrior","name":"Line Warrior","icon":"line","description":"Complete Week 1 — Line Confidence & Basic Shapes.","condition":{"type":"day","day":7}},{"id":"shape_shifter","name":"Shape Shifter","icon":"cube","description":"Complete Week 2 — Forms & Perspective.","condition":{"type":"day","day":15}},{"id":"gesture_ninja","name":"Gesture Ninja","icon":"flow","description":"Complete Week 3 — Construction & Gesture Drawing.","condition":{"type":"day","day":22}},{"id":"foundations_master","name":"Foundations Master","icon":"pillar","description":"Complete Phase 1 in full.","condition":{"type":"day","day":30}},{"id":"halfway_hero","name":"Halfway Hero","icon":"flag","description":"Reach Day 45 — the exact midpoint.","condition":{"type":"count","count":45}},{"id":"bone_collector","name":"Bone Collector","icon":"bone","description":"Complete Week 5 — Anatomy Basics & Proportions.","condition":{"type":"day","day":37}},{"id":"handy_work","name":"Handy Work","icon":"hand","description":"Complete Week 6 — Hands & Feet.","condition":{"type":"day","day":45}},{"id":"stylist","name":"Stylist","icon":"hair","description":"Complete Week 7 — Hair & Clothing.","condition":{"type":"day","day":52}},{"id":"figure_master","name":"Figure Drawing Master","icon":"figure","description":"Complete Phase 2 in full.","condition":{"type":"day","day":60}},{"id":"character_creator","name":"Character Creator","icon":"mask","description":"Complete Week 9 — Manga Style & Character Design.","condition":{"type":"day","day":67}},{"id":"action_star","name":"Action Star","icon":"burst","description":"Complete Week 10 — Dynamic Poses & Composition.","condition":{"type":"day","day":75}},{"id":"storyteller","name":"Storyteller","icon":"book","description":"Complete Week 11 — Backgrounds & Storytelling.","condition":{"type":"day","day":82}},{"id":"mangaka","name":"Mangaka","icon":"stamp","description":"Complete the full 90-day roadmap and final project.","condition":{"type":"day","day":90}},{"id":"streak_7","name":"7-Day Streak","icon":"fire","description":"Complete at least one day, 7 real-world days in a row.","condition":{"type":"streak","days":7}}]};
+</script>
+<script>
+
+(function(){
+'use strict';
+
+/* ============================== CONSTANTS ============================== */
+var STORAGE_KEY = 'mangaka_path_progress_v1';
+var STATE_VERSION = 1;
+var XP_PER_DAY = 100;
+var XP_WEEK_BONUS = 200;
+var XP_PHASE_BONUS = 500;
+var XP_PER_LEVEL = 430;
+var LEVEL_TITLES = [
+  [1,'Blank Page'],[3,'Line Apprentice'],[6,'Form Student'],[9,'Gesture Adept'],
+  [12,'Anatomy Scholar'],[15,'Figure Artist'],[18,'Style Explorer'],
+  [21,'Storyboard Artist'],[24,'Inker'],[27,'Toning Master'],[30,'Mangaka']
+];
+var REVIEW_DAY_IDS = new Set(CURRICULUM.weeks.map(function(w){ return w.days[1]; }));
+
+/* ============================== STATE ============================== */
+var state = null;
+var uiState = {
+  openPhaseGroups: {1:true, 2:false, 3:false},
+  openWeeks: {},
+  mobileMenuOpen: false,
+  searchOpen: false,
+  resetModalOpen: false,
+  embedsOpen: {}
+};
+
+function defaultState(){
+  return {
+    version: STATE_VERSION,
+    startDate: localDateStr(new Date()),
+    completedDays: {},
+    checklist: {},
+    notes: {},
+    xp: 0,
+    badges: {}
+  };
+}
+
+function loadState(){
+  var loaded = null;
+  try{
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if(raw) loaded = JSON.parse(raw);
+  }catch(e){ console.warn('Progress could not be loaded from this browser.', e); }
+  state = Object.assign(defaultState(), loaded || {});
+  if(!state.startDate) state.startDate = localDateStr(new Date());
+}
+
+function saveState(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }catch(e){ console.warn('Progress could not be saved in this browser.', e); }
+}
+
+/* ============================== DATA HELPERS ============================== */
+function dayById(id){
+  for(var i=0;i<CURRICULUM.days.length;i++){ if(CURRICULUM.days[i].id===id) return CURRICULUM.days[i]; }
+  return null;
+}
+function weekByNum(n){
+  for(var i=0;i<CURRICULUM.weeks.length;i++){ if(CURRICULUM.weeks[i].week===n) return CURRICULUM.weeks[i]; }
+  return null;
+}
+function daysInWeek(n){ return CURRICULUM.days.filter(function(d){ return d.week===n; }); }
+function daysInPhase(p){ return CURRICULUM.days.filter(function(d){ return d.phase===p; }); }
+function isDayDone(id){ return !!(state.completedDays[id] && state.completedDays[id].done); }
+function completedCount(){ return Object.keys(state.completedDays).filter(function(k){ return state.completedDays[k].done; }).length; }
+
+/* ============================== XP / LEVEL / STREAK ============================== */
+function getLevel(xp){ return Math.floor(xp / XP_PER_LEVEL) + 1; }
+function xpForLevel(level){ return (level-1)*XP_PER_LEVEL; }
+function getLevelTitle(level){
+  var title = LEVEL_TITLES[0][1];
+  for(var i=0;i<LEVEL_TITLES.length;i++){ if(level >= LEVEL_TITLES[i][0]) title = LEVEL_TITLES[i][1]; }
+  return title;
+}
+function recalcXP(){
+  var doneIds = Object.keys(state.completedDays).filter(function(k){ return state.completedDays[k].done; }).map(Number);
+  var doneSet = new Set(doneIds);
+  var xp = doneIds.length * XP_PER_DAY;
+  CURRICULUM.weeks.forEach(function(w){
+    var ids = daysInWeek(w.week).map(function(d){ return d.id; });
+    if(ids.length && ids.every(function(id){ return doneSet.has(id); })) xp += XP_WEEK_BONUS;
+  });
+  [1,2,3].forEach(function(p){
+    var ids = daysInPhase(p).map(function(d){ return d.id; });
+    if(ids.length && ids.every(function(id){ return doneSet.has(id); })) xp += XP_PHASE_BONUS;
+  });
+  state.xp = xp;
+}
+function currentStreak(){
+  var doneDates = new Set(Object.keys(state.completedDays)
+    .filter(function(k){ return state.completedDays[k].done; })
+    .map(function(k){ return localDateStr(new Date(state.completedDays[k].ts)); }));
+  var streak = 0;
+  var cursor = new Date();
+  if(!doneDates.has(localDateStr(cursor))) cursor = addDays(cursor, -1);
+  while(doneDates.has(localDateStr(cursor))){
+    streak++;
+    cursor = addDays(cursor, -1);
+  }
+  return streak;
+}
+function checkBadges(){
+  var newly = [];
+  CURRICULUM.badges.forEach(function(b){
+    if(state.badges[b.id] && state.badges[b.id].unlocked) return;
+    var met = false;
+    if(b.condition.type==='day') met = isDayDone(b.condition.day);
+    else if(b.condition.type==='count') met = completedCount() >= b.condition.count;
+    else if(b.condition.type==='streak') met = currentStreak() >= b.condition.days;
+    if(met){
+      state.badges[b.id] = {unlocked:true, ts:new Date().toISOString()};
+      newly.push(b);
+    }
+  });
+  if(newly.length){
+    saveState();
+    newly.forEach(function(b){ showToast('Badge Unlocked: ' + b.name, b.description, b.icon); });
+  }
+}
+
+/* ============================== DATE HELPERS ============================== */
+function localDateStr(d){
+  var y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
+  return y+'-'+m+'-'+day;
+}
+function parseLocalDate(str){
+  var parts = str.split('-').map(Number);
+  return new Date(parts[0], parts[1]-1, parts[2]);
+}
+function addDays(date, n){
+  var d = new Date(date.getTime());
+  d.setDate(d.getDate()+n);
+  return d;
+}
+function dateToProgramDay(date, start){
+  var a = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  var b = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+  return Math.round((a-b)/86400000) + 1;
+}
+function monthsBetween(start, end){
+  var out = [];
+  var y = start.getFullYear(), m = start.getMonth();
+  var endY = end.getFullYear(), endM = end.getMonth();
+  while(y < endY || (y===endY && m<=endM)){
+    out.push({year:y, month:m});
+    m++; if(m>11){ m=0; y++; }
+  }
+  return out;
+}
+
+/* ============================== SMALL UTILS ============================== */
+function escapeHtml(str){
+  if(str===undefined || str===null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function toRoman(p){ return p===1?'I':(p===2?'II':'III'); }
+function phaseTitle(p){ return p===1?'Foundations':(p===2?'Figure Drawing':'Manga Creation'); }
+function phaseSubtitle(p){
+  if(p===1) return "Line control, basic shapes, 3D forms, perspective, gesture drawing and head construction \u2014 the vocabulary every drawing after this will use.";
+  if(p===2) return "Full-figure anatomy, hands, feet, hair, clothing, expressions, lighting and value \u2014 turning construction into a believable human figure.";
+  return "Manga-specific style, original character design, dynamic action, backgrounds, storytelling and production \u2014 ending in a complete, inked and toned original manga.";
+}
+function icon(name, cls){
+  return '<svg class="icon ' + (cls||'') + '" aria-hidden="true"><use href="#icon-' + name + '"></use></svg>';
+}
+function findNextDay(){
+  for(var i=1;i<=90;i++){ if(!isDayDone(i)) return dayById(i); }
+  return null;
+}
+
+/* ============================== ROUTING ============================== */
+function parseRoute(){
+  var raw = (location.hash || '#/dashboard').replace(/^#\/?/, '') || 'dashboard';
+  if(['dashboard','calendar','final-project','notes','badges'].indexOf(raw) !== -1) return {view:raw};
+  var m = raw.match(/^phase-(\d)(?:-w(\d+))?$/);
+  if(m) return {view:'phase', phase:Number(m[1]), week: m[2]?Number(m[2]):null};
+  m = raw.match(/^day-(\d+)$/);
+  if(m) return {view:'day', day:Number(m[1])};
+  return {view:'dashboard'};
+}
+function navigate(hash){
+  if(location.hash === '#/'+hash) render();
+  else location.hash = '#/'+hash;
+}
+function topbarLabel(r){
+  if(r.view==='dashboard') return 'Dashboard';
+  if(r.view==='phase') return 'Phase ' + toRoman(r.phase);
+  if(r.view==='day') return 'Day ' + pad(r.day);
+  if(r.view==='calendar') return 'Calendar';
+  if(r.view==='final-project') return 'Final Project';
+  if(r.view==='notes') return 'My Notes';
+  if(r.view==='badges') return 'Badges';
+  return 'Mangaka Path';
+}
+
+/* ============================== RENDER: SHELL PIECES ============================== */
+function navItem(route, iconName, label, active){
+  return '<button class="nav-item ' + (active?'is-active':'') + '" data-action="nav" data-route="' + route + '">' + icon(iconName) + '<span>' + label + '</span></button>';
+}
+function renderSidebarNavHtml(route){
+  var html = '';
+  html += navItem('dashboard','home','Dashboard', route.view==='dashboard');
+  for(var p=1;p<=3;p++){
+    var weeks = CURRICULUM.weeks.filter(function(w){ return w.phase===p; });
+    var pDays = daysInPhase(p);
+    var pDone = pDays.filter(function(d){ return isDayDone(d.id); }).length;
+    var isOpen = uiState.openPhaseGroups[p];
+    html += '<div class="nav-group ' + (isOpen?'is-open':'') + '">' +
+      '<button class="nav-group__header" data-action="toggle-phase-group" data-phase="' + p + '">' +
+        icon('book') + '<span>Phase ' + toRoman(p) + ' \u2014 ' + phaseTitle(p) + '</span>' +
+        '<span class="nav-group__phase-progress">' + pDone + '/' + pDays.length + '</span>' +
+        '<span class="nav-group__chevron">' + icon('chevron') + '</span>' +
+      '</button>' +
+      '<div class="nav-group__body"><div class="nav-group__body-inner">' +
+        weeks.map(function(w){
+          var wDays = daysInWeek(w.week);
+          var wDone = wDays.filter(function(d){ return isDayDone(d.id); }).length;
+          var active = route.view==='phase' && route.phase===p && route.week===w.week;
+          return '<button class="nav-subitem ' + (active?'is-active':'') + '" data-action="nav" data-route="phase-' + p + '-w' + w.week + '">' +
+            '<span class="nav-subitem__dot ' + (wDone===wDays.length?'is-done':'') + '"></span>' +
+            '<span>Week ' + w.week + ': ' + escapeHtml(w.title) + '</span></button>';
+        }).join('') +
+        '<button class="nav-subitem" data-action="nav" data-route="phase-' + p + '"><span class="nav-subitem__dot"></span><span>All of Phase ' + toRoman(p) + '</span></button>' +
+      '</div></div></div>';
+  }
+  html += navItem('calendar','calendar','Calendar', route.view==='calendar');
+  html += navItem('final-project','flag','Final Project', route.view==='final-project');
+  html += navItem('badges','trophy','Badges', route.view==='badges');
+  html += navItem('notes','note','My Notes', route.view==='notes');
+  return html;
+}
+function renderSidebarXPHtml(){
+  var lvl = getLevel(state.xp);
+  var title = getLevelTitle(lvl);
+  var into = state.xp - xpForLevel(lvl);
+  var pct = Math.max(0, Math.min(100, Math.round((into/XP_PER_LEVEL)*100)));
+  return '<div class="sidebar__xp">' +
+    '<div class="sidebar__xp-top"><span class="sidebar__level">Lv.' + lvl + ' \u00b7 ' + title + '</span><span class="sidebar__xp-num">' + state.xp + ' XP</span></div>' +
+    '<div class="xp-track tone-bg"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
+  '</div>';
+}
+function renderTabbarHtml(route){
+  return navTab('dashboard','home','Home', route.view==='dashboard') +
+    navTab('calendar','calendar','Calendar', route.view==='calendar') +
+    '<button class="tabbar__item" data-action="open-search">' + icon('search') + '<span>Search</span></button>' +
+    navTab('notes','note','Notes', route.view==='notes') +
+    '<button class="tabbar__item" data-action="open-menu">' + icon('menu') + '<span>Menu</span></button>';
+}
+function navTab(route, iconName, label, active){
+  return '<button class="tabbar__item ' + (active?'is-active':'') + '" data-action="nav" data-route="' + route + '">' + icon(iconName) + '<span>' + label + '</span></button>';
+}
+function renderSidebar(route){
+  var navEl = document.getElementById('sidebarNav');
+  if(navEl) navEl.innerHTML = renderSidebarNavHtml(route);
+  var xpEl = document.getElementById('sidebarXP');
+  if(xpEl) xpEl.innerHTML = renderSidebarXPHtml();
+}
+function renderTabbar(route){
+  var el = document.getElementById('tabbarInner');
+  if(el) el.innerHTML = renderTabbarHtml(route);
+}
+function renderTopbarTitle(route){
+  var el = document.getElementById('topbarTitleText');
+  if(el) el.textContent = topbarLabel(route);
+}
+
+/* ============================== RENDER: DASHBOARD ============================== */
+function renderBadgeChip(b){
+  var unlocked = !!(state.badges[b.id] && state.badges[b.id].unlocked);
+  return '<div class="badge-chip ' + (unlocked?'':'is-locked') + '" title="' + escapeHtml(b.description) + '">' +
+    '<div class="badge-stamp">' + icon(b.icon) + '</div><div class="badge-name">' + escapeHtml(b.name) + '</div></div>';
+}
+function renderDashboard(){
+  var totalDone = completedCount();
+  var pct = Math.round((totalDone/90)*100);
+  var lvl = getLevel(state.xp);
+  var lvlTitle = getLevelTitle(lvl);
+  var streak = currentStreak();
+  var unlockedBadges = CURRICULUM.badges.filter(function(b){ return state.badges[b.id] && state.badges[b.id].unlocked; });
+  var nextDay = findNextDay();
+  var r = 50, circumference = 2*Math.PI*r;
+  var dashoffset = circumference * (1 - pct/100);
+
+  var heroAction = nextDay
+    ? '<button class="btn btn--primary" data-action="nav" data-route="day-' + nextDay.id + '">' + icon('play') + ' Continue: Day ' + pad(nextDay.id) + '</button>'
+    : '<button class="btn btn--primary" data-action="nav" data-route="final-project">' + icon('trophy') + ' View Final Project</button>';
+
+  return '<div class="view">' +
+    '<div class="view-header"><span class="eyebrow">' + (nextDay ? ('Up Next \u00b7 Day ' + pad(nextDay.id)) : 'Roadmap Complete') + '</span>' +
+    '<h1 class="view-title">Welcome back<span style="color:var(--hanko)">.</span></h1></div>' +
+
+    '<div class="panel hero">' +
+      '<div class="hero__ring-wrap"><svg width="118" height="118" viewBox="0 0 118 118">' +
+        '<circle cx="59" cy="59" r="' + r + '" fill="none" stroke="var(--ink-4)" stroke-width="10"/>' +
+        '<circle cx="59" cy="59" r="' + r + '" fill="none" stroke="var(--hanko)" stroke-width="10" stroke-linecap="round" ' +
+        'stroke-dasharray="' + circumference.toFixed(1) + '" stroke-dashoffset="' + dashoffset.toFixed(1) + '" ' +
+        'style="transition:stroke-dashoffset .8s cubic-bezier(.4,0,.2,1)"/></svg>' +
+        '<div class="hero__ring-pct"><b>' + pct + '%</b><span>COMPLETE</span></div></div>' +
+      '<div class="hero__body"><h2>' + totalDone + ' of 90 days done</h2>' +
+      '<p>Level ' + lvl + ' \u2014 ' + lvlTitle + ' \u00b7 ' + state.xp + ' XP' + (streak>0 ? (' \u00b7 ' + streak + '-day streak \uD83D\uDD25') : '') + '</p>' +
+      '<div class="hero__actions">' + heroAction + '<button class="btn btn--ghost" data-action="nav" data-route="calendar">' + icon('calendar') + ' Calendar</button></div></div>' +
+    '</div>' +
+
+    '<div class="stat-row">' +
+      '<div class="panel stat-card"><div class="stat-card__num">' + totalDone + '</div><div class="stat-card__label">Days Done</div></div>' +
+      '<div class="panel stat-card"><div class="stat-card__num">' + streak + '</div><div class="stat-card__label">Day Streak</div></div>' +
+      '<div class="panel stat-card"><div class="stat-card__num">' + lvl + '</div><div class="stat-card__label">Level</div></div>' +
+      '<div class="panel stat-card"><div class="stat-card__num">' + unlockedBadges.length + '/' + CURRICULUM.badges.length + '</div><div class="stat-card__label">Badges</div></div>' +
+    '</div>' +
+
+    '<h3 class="section-heading">' + icon('book') + ' The Three Phases</h3>' +
+    '<div class="phase-grid">' +
+      [1,2,3].map(function(p){
+        var pd = daysInPhase(p), pdone = pd.filter(function(d){ return isDayDone(d.id); }).length;
+        var ppct = Math.round((pdone/pd.length)*100);
+        return '<div class="panel phase-card" data-action="nav" data-route="phase-' + p + '">' +
+          '<div class="phase-card__num">PHASE ' + toRoman(p) + ' \u00b7 ' + pdone + '/' + pd.length + '</div>' +
+          '<div class="phase-card__title">' + phaseTitle(p) + '</div>' +
+          '<div class="progress-bar tone-bg phase-card__bar"><div class="progress-bar__fill" style="width:' + ppct + '%"></div></div></div>';
+      }).join('') +
+    '</div>' +
+
+    '<h3 class="section-heading">' + icon('trophy') + ' Badges <button data-action="nav" data-route="badges" style="font-family:var(--font-mono);font-size:11px;color:var(--paper-dim);font-weight:400;background:none;border:none">View all \u2192</button></h3>' +
+    '<div class="badges-row" style="margin-bottom:26px">' + CURRICULUM.badges.slice(0,7).map(renderBadgeChip).join('') + '</div>' +
+
+    '<h3 class="section-heading">' + icon('gear') + ' Before You Begin</h3>' +
+    '<div class="materials-grid">' +
+      '<div class="panel materials-card"><div class="materials-card__title">' + icon('pencil') + ' Materials</div>' +
+      '<p>Weeks 1\u20132: plain paper and a pencil or ballpoint pen (Drawabox recommends pen \u2014 it removes the temptation to erase and "fix" instead of learning). From Phase 2\u20133 onward, a basic drawing tablet plus Clip Studio Paint (the manga-industry standard, with built-in screentones) will matter for Week 12\u2019s inking and toning.</p></div>' +
+      '<div class="panel materials-card"><div class="materials-card__title">' + icon('clock') + ' Pacing</div>' +
+      '<p>Time estimates assume roughly 60\u2013120 minutes on weekdays and a bit more on weekends. Life happens \u2014 missing a day doesn\u2019t break the roadmap, it just shifts your calendar. Consistency across 90 days beats intensity for three.</p></div>' +
+      '<div class="panel materials-card"><div class="materials-card__title">' + icon('refresh') + ' If You Fall Behind</div>' +
+      '<p>Don\u2019t skip days just to catch up to a date. Each day builds on the last, so it\u2019s better to finish this as a 120-day roadmap than to rush a 90-day one with gaps in the foundation.</p></div>' +
+    '</div>' +
+  '</div>';
+}
+
+/* ============================== RENDER: PHASE / WEEKS / DAYS ============================== */
+function renderDayRow(day, week){
+  var done = isDayDone(day.id);
+  var isReview = week.days[1]===day.id;
+  return '<div class="day-row ' + (done?'is-done':'') + ' ' + (isReview?'is-review':'') + '" data-action="nav" data-route="day-' + day.id + '">' +
+    '<input type="checkbox" class="checkbox day-row__check" data-action="toggle-day" data-day="' + day.id + '" ' + (done?'checked':'') + '>' +
+    '<span class="day-row__num">D' + pad(day.id) + '</span>' +
+    '<div class="day-row__body"><div class="day-row__title">' + (isReview?'\u2605 ':'') + escapeHtml(day.title) + '</div>' +
+    '<div class="day-row__obj">' + escapeHtml(day.objective) + '</div></div>' +
+    '<span class="day-row__time">' + escapeHtml(day.time) + '</span></div>';
+}
+function renderWeekReviewCard(week){
+  var rv = week.review;
+  return '<div class="week-review-card">' +
+    '<div class="week-review-card__title">' + icon('trophy') + ' Week ' + week.week + ' Review</div>' +
+    reviewRow('Skill Assessment', rv.assessment) +
+    reviewRow('Portfolio Challenge', rv.challenge) +
+    reviewRow('Revision Tasks', rv.revision) +
+    reviewRow('You Should Now Confidently Draw', rv.confident) +
+  '</div>';
+}
+function reviewRow(label, text){
+  return '<div class="review-row"><div class="review-row__label">' + label + '</div><div class="review-row__text">' + escapeHtml(text) + '</div></div>';
+}
+function renderWeekBlock(week){
+  var wDays = daysInWeek(week.week);
+  var wDone = wDays.filter(function(d){ return isDayDone(d.id); }).length;
+  var pct = Math.round((wDone/wDays.length)*100);
+  var isOpen = !!uiState.openWeeks[week.week];
+  return '<div class="panel week-block ' + (isOpen?'is-open':'') + '" id="week-' + week.week + '">' +
+    '<button class="week-block__header" data-action="toggle-week" data-week="' + week.week + '">' +
+      '<span class="week-block__chevron">' + icon('chevron') + '</span>' +
+      '<span class="week-block__index">WEEK ' + pad(week.week) + '</span>' +
+      '<span class="week-block__title">' + escapeHtml(week.title) + '</span>' +
+      '<span class="week-block__progress progress-bar tone-bg"><span class="progress-bar__fill" style="width:' + pct + '%"></span></span>' +
+      '<span class="week-block__meta">' + wDone + '/' + wDays.length + '</span>' +
+    '</button>' +
+    '<div class="week-block__body"><div class="week-block__body-inner">' +
+      wDays.map(function(d){ return renderDayRow(d, week); }).join('') +
+      renderWeekReviewCard(week) +
+    '</div></div></div>';
+}
+function renderPhase(phaseNum){
+  var weeks = CURRICULUM.weeks.filter(function(w){ return w.phase===phaseNum; });
+  var pDays = daysInPhase(phaseNum);
+  var pDone = pDays.filter(function(d){ return isDayDone(d.id); }).length;
+  var pct = Math.round((pDone/pDays.length)*100);
+  return '<div class="view"><div class="view-header"><span class="eyebrow">Phase ' + toRoman(phaseNum) + ' of III</span>' +
+    '<h1 class="view-title">' + phaseTitle(phaseNum) + '</h1><p class="view-subtitle">' + phaseSubtitle(phaseNum) + '</p></div>' +
+    '<div class="panel panel--pad" style="margin-bottom:22px">' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:13px;color:var(--paper-dim)"><span>' + pDone + ' / ' + pDays.length + ' days complete</span><span>' + pct + '%</span></div>' +
+      '<div class="progress-bar tone-bg"><div class="progress-bar__fill" style="width:' + pct + '%"></div></div>' +
+    '</div>' +
+    weeks.map(renderWeekBlock).join('') +
+  '</div>';
+}
+
+/* ============================== RENDER: DAY DETAIL ============================== */
+function renderResourceCard(resId, dayId){
+  var r = CURRICULUM.resources[resId];
+  if(!r) return '';
+  var key = dayId + '-' + resId;
+  var isOpen = !!uiState.embedsOpen[key];
+  var thumbHtml;
+  if(r.embed_type==='video' && r.yt_id){
+    thumbHtml = '<div class="resource-card__thumb" style="background-image:url(\'https://img.youtube.com/vi/' + r.yt_id + '/hqdefault.jpg\')">' + icon('play') + '</div>';
+  } else if(r.embed_type==='playlist'){
+    thumbHtml = '<div class="resource-card__thumb no-thumb">' + icon('play') + '</div>';
+  } else {
+    thumbHtml = '<div class="resource-card__thumb no-thumb">' + icon('external') + '</div>';
+  }
+  var embedBtn = '', embedDiv = '';
+  if(r.embed_type==='video' || r.embed_type==='playlist'){
+    embedBtn = '<button class="btn btn--sm btn--ghost" data-action="toggle-embed" data-key="' + key + '">' + icon('play') + ' ' + (isOpen?'Hide video':'Watch inline') + '</button>';
+    if(isOpen){
+      var src = r.embed_type==='video'
+        ? ('https://www.youtube.com/embed/' + r.yt_id + '?autoplay=1')
+        : ('https://www.youtube.com/embed/videoseries?list=' + r.yt_list);
+      embedDiv = '<div class="resource-embed"><iframe src="' + src + '" title="' + escapeHtml(r.title) + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+    }
+  }
+  return '<div class="resource-card">' + thumbHtml +
+    '<div class="resource-card__body">' +
+      '<div class="resource-card__creator">' + escapeHtml(r.creator) + '</div>' +
+      '<div class="resource-card__title">' + escapeHtml(r.title) + '</div>' +
+      '<div class="resource-card__why">' + escapeHtml(r.why) + '</div>' +
+      '<div class="resource-card__actions">' + embedBtn +
+        '<a class="resource-card__link" href="' + r.url + '" target="_blank" rel="noopener">' + icon('external') + ' Open on ' + (r.embed_type==='site'?'site':'YouTube') + '</a>' +
+      '</div>' + embedDiv +
+    '</div></div>';
+}
+function renderDayDetail(dayId){
+  var day = dayById(dayId);
+  if(!day) return '<div class="view"><p>Day not found.</p></div>';
+  var done = isDayDone(dayId);
+  var week = weekByNum(day.week);
+  var isReviewDay = week && week.days[1]===dayId;
+  var checklistState = state.checklist[dayId] || [];
+  var notesVal = state.notes[dayId] || '';
+
+  var checklistHtml = day.checklist.map(function(c,i){
+    return '<li><label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer">' +
+      '<input type="checkbox" class="checkbox" style="margin-top:2px" data-action="toggle-checklist" data-day="' + day.id + '" data-idx="' + i + '" ' + (checklistState[i]?'checked':'') + '>' +
+      '<span>' + escapeHtml(c) + '</span></label></li>';
+  }).join('');
+
+  var prevBtn = day.id>1 ? '<button class="btn btn--ghost" data-action="nav" data-route="day-' + (day.id-1) + '">' + icon('arrow-left') + ' Day ' + pad(day.id-1) + '</button>' : '<span></span>';
+  var nextBtn = day.id<90 ? '<button class="btn btn--primary" data-action="nav" data-route="day-' + (day.id+1) + '">Day ' + pad(day.id+1) + ' ' + icon('arrow-right') + '</button>' : '<span></span>';
+
+  return '<div class="view">' +
+    '<div class="view-header"><span class="eyebrow">Phase ' + toRoman(day.phase) + ' \u00b7 Week ' + day.week + (isReviewDay?' \u00b7 Weekly Review':'') + '</span>' +
+      '<div class="day-detail__top">' +
+        '<div class="day-detail__check-wrap"><input type="checkbox" class="checkbox day-detail__check" data-action="toggle-day" data-day="' + day.id + '" ' + (done?'checked':'') + '></div>' +
+        '<div><h1 class="view-title">Day ' + pad(day.id) + ': ' + escapeHtml(day.title) + '</h1>' +
+        '<div class="day-detail__meta-row"><span class="pill pill--time">' + icon('clock') + ' ' + escapeHtml(day.time) + '</span>' +
+        (done ? ('<span class="pill pill--hanko">' + icon('check') + ' Complete</span>') : '') + '</div></div>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="day-section"><div class="day-section__label">' + icon('target') + ' Learning Objective</div><div class="day-section__body">' + escapeHtml(day.objective) + '</div></div>' +
+
+    '<div class="day-section"><div class="day-section__label">' + icon('play') + ' Tutorial' + (day.resources.length>1?'s':'') + '</div>' +
+      day.resources.map(function(rid){ return renderResourceCard(rid, day.id); }).join('') +
+    '</div>' +
+
+    '<div class="day-section"><div class="day-section__label">' + icon('pencil') + ' Practice Assignment</div><div class="day-section__body"><p>' + escapeHtml(day.assignment) + '</p></div></div>' +
+
+    '<div class="day-section"><div class="day-section__label">' + icon('alert') + ' Common Mistakes</div><ul class="mistake-list">' +
+      day.mistakes.map(function(m){ return '<li>' + escapeHtml(m) + '</li>'; }).join('') + '</ul></div>' +
+
+    '<div class="day-section"><div class="day-section__label">' + icon('check') + ' Self-Check</div><ul class="check-list">' + checklistHtml + '</ul></div>' +
+
+    '<div class="day-section"><div class="day-section__label">' + icon('star') + ' Expected Outcome</div><div class="outcome-box">' + escapeHtml(day.outcome) + '</div></div>' +
+
+    '<div class="day-section"><div class="day-section__label">' + icon('note') + ' Your Notes</div><div class="notes-box">' +
+      '<textarea class="notes-input" placeholder="Jot down anything you noticed today\u2026" data-action="notes-input" data-day="' + day.id + '">' + escapeHtml(notesVal) + '</textarea>' +
+      '<div class="notes-save-hint" id="notesHint-' + day.id + '">Autosaves as you type</div>' +
+    '</div></div>' +
+
+    (isReviewDay ? renderWeekReviewCard(week) : '') +
+
+    '<div class="day-nav">' + prevBtn + nextBtn + '</div>' +
+  '</div>';
+}
+
+/* ============================== RENDER: CALENDAR ============================== */
+function renderCalendarMonth(year, month, start){
+  var first = new Date(year, month, 1);
+  var daysInMonth = new Date(year, month+1, 0).getDate();
+  var startDow = first.getDay();
+  var monthName = first.toLocaleString('default',{month:'long'});
+  var todayStr = localDateStr(new Date());
+  var dow = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+
+  var cells = '';
+  for(var i=0;i<startDow;i++) cells += '<div class="calendar-cell is-empty"></div>';
+  for(var d=1; d<=daysInMonth; d++){
+    var cellDate = new Date(year, month, d);
+    var cellStr = localDateStr(cellDate);
+    var progDay = dateToProgramDay(cellDate, start);
+    var inRange = progDay>=1 && progDay<=90;
+    var done = inRange && isDayDone(progDay);
+    var isReview = inRange && REVIEW_DAY_IDS.has(progDay);
+    var isToday = cellStr===todayStr;
+    var classes = 'calendar-cell';
+    if(inRange) classes += ' has-day';
+    if(done) classes += ' is-done';
+    if(isReview && !done) classes += ' is-review';
+    if(isToday) classes += ' is-today';
+    cells += '<div class="' + classes + '" ' + (inRange ? ('data-action="nav" data-route="day-' + progDay + '"') : '') + '>' +
+      '<span class="calendar-cell__daynum">' + d + '</span>' +
+      (inRange ? ('<span class="calendar-cell__prognum">D' + pad(progDay) + '</span>') : '') +
+    '</div>';
+  }
+  return '<div class="panel panel--pad calendar-month"><div class="calendar-month__title">' + monthName + ' ' + year + '</div>' +
+    '<div class="calendar-grid">' + dow.map(function(x){ return '<div class="calendar-dow">' + x + '</div>'; }).join('') + cells + '</div></div>';
+}
+function renderCalendar(){
+  var start = parseLocalDate(state.startDate);
+  var end = addDays(start, 89);
+  var months = monthsBetween(start, end);
+  return '<div class="view"><div class="view-header"><span class="eyebrow">90 Days, Mapped</span><h1 class="view-title">Calendar</h1>' +
+    '<p class="view-subtitle">Set the date you started (or plan to start) and your 90 program days map onto real dates. This is a guide, not a lock \u2014 completion always comes from your own checkmarks, not the calendar.</p></div>' +
+    '<div class="panel panel--pad calendar-toolbar">' +
+      '<label for="startDateInput">Day 1 date</label>' +
+      '<input type="date" id="startDateInput" value="' + state.startDate + '" data-action="set-start-date">' +
+      '<div class="calendar-legend">' +
+        '<span><span class="legend-dot" style="background:var(--hanko)"></span>Complete</span>' +
+        '<span><span class="legend-dot" style="background:var(--ink-3);border:1px solid var(--hikou-dim)"></span>Week review</span>' +
+        '<span><span class="legend-dot" style="background:var(--ink-3);outline:2px solid var(--hikou)"></span>Today</span>' +
+      '</div>' +
+    '</div>' +
+    months.map(function(m){ return renderCalendarMonth(m.year, m.month, start); }).join('') +
+  '</div>';
+}
+
+/* ============================== RENDER: FINAL PROJECT / NOTES / BADGES ============================== */
+function renderFinalProject(){
+  var fp = CURRICULUM.finalProject;
+  return '<div class="view"><div class="view-header"><span class="eyebrow">Day 90 Capstone</span><h1 class="view-title">' + escapeHtml(fp.title) + '</h1>' +
+    '<p class="view-subtitle">' + escapeHtml(fp.intro) + '</p></div>' +
+    '<div class="deliverable-grid">' +
+      fp.deliverables.map(function(d,i){
+        return '<div class="panel deliverable-card"><div class="deliverable-card__num">DELIVERABLE ' + pad(i+1) + '/08</div>' +
+          '<div class="deliverable-card__title">' + escapeHtml(d.name) + '</div>' +
+          '<div class="deliverable-card__desc">' + escapeHtml(d.description) + '</div>' +
+          '<div class="deliverable-card__days">' + d.built_on_days.map(function(dd){
+            return '<span class="day-chip" style="cursor:pointer" data-action="nav" data-route="day-' + dd + '">Day ' + dd + '</span>';
+          }).join('') + '</div></div>';
+      }).join('') +
+    '</div>' +
+    '<div class="reality-box"><div class="reality-box__title">' + icon('alert') + ' A Note On Realistic Expectations</div><p>' + escapeHtml(fp.reality_check) + '</p></div>' +
+  '</div>';
+}
+function renderNotes(){
+  var entries = Object.keys(state.notes).filter(function(k){ return state.notes[k] && state.notes[k].trim(); }).map(Number).sort(function(a,b){ return a-b; });
+  if(!entries.length){
+    return '<div class="view"><div class="view-header"><span class="eyebrow">Your Journal</span><h1 class="view-title">Notes</h1>' +
+      '<p class="view-subtitle">Notes you add on any day\u2019s page will show up here, all in one place.</p></div>' +
+      '<div class="panel panel--pad" style="text-align:center;color:var(--paper-faint);padding:40px 20px">' + icon('note') + '<br><br>No notes yet \u2014 open any day and jot something down.</div></div>';
+  }
+  return '<div class="view"><div class="view-header"><span class="eyebrow">Your Journal</span><h1 class="view-title">Notes</h1>' +
+    '<p class="view-subtitle">' + entries.length + ' day' + (entries.length===1?'':'s') + ' with notes.</p></div>' +
+    entries.map(function(id){
+      var day = dayById(id);
+      return '<div class="panel note-card"><div class="note-card__head"><span class="note-card__day">DAY ' + pad(id) + '</span>' +
+        '<button class="btn btn--sm btn--ghost" data-action="nav" data-route="day-' + id + '">Open</button></div>' +
+        '<div class="note-card__title">' + escapeHtml(day.title) + '</div>' +
+        '<div class="note-card__text">' + escapeHtml(state.notes[id]) + '</div></div>';
+    }).join('') +
+  '</div>';
+}
+function renderBadgeCard(b){
+  var unlocked = !!(state.badges[b.id] && state.badges[b.id].unlocked);
+  return '<div class="panel badge-card ' + (unlocked?'':'is-locked') + '"><div class="badge-stamp">' + icon(b.icon) + '</div>' +
+    '<div class="badge-name">' + escapeHtml(b.name) + '</div><div class="badge-desc">' + escapeHtml(b.description) + '</div></div>';
+}
+function renderBadges(){
+  var unlockedCount = CURRICULUM.badges.filter(function(b){ return state.badges[b.id] && state.badges[b.id].unlocked; }).length;
+  return '<div class="view"><div class="view-header"><span class="eyebrow">Milestones</span><h1 class="view-title">Badges</h1>' +
+    '<p class="view-subtitle">' + unlockedCount + ' / ' + CURRICULUM.badges.length + ' unlocked.</p></div>' +
+    '<div class="badge-grid">' + CURRICULUM.badges.map(renderBadgeCard).join('') + '</div></div>';
+}
+
+/* ============================== VIEW DISPATCH ============================== */
+function renderView(){
+  var r = parseRoute();
+  if(r.view==='phase'){
+    uiState.openPhaseGroups[r.phase] = true;
+    if(r.week) uiState.openWeeks[r.week] = true;
+  }
+  if(r.view==='day'){
+    var d = dayById(r.day);
+    if(d) uiState.openPhaseGroups[d.phase] = true;
+  }
+  var html;
+  if(r.view==='dashboard') html = renderDashboard();
+  else if(r.view==='phase') html = renderPhase(r.phase);
+  else if(r.view==='day') html = renderDayDetail(r.day);
+  else if(r.view==='calendar') html = renderCalendar();
+  else if(r.view==='final-project') html = renderFinalProject();
+  else if(r.view==='notes') html = renderNotes();
+  else if(r.view==='badges') html = renderBadges();
+  else html = renderDashboard();
+  document.getElementById('main').innerHTML = html;
+  renderSidebar(r);
+  renderTabbar(r);
+  renderTopbarTitle(r);
+  return r;
+}
+function render(){
+  var r = renderView();
+  if(r.view==='phase' && r.week){
+    var el = document.getElementById('week-'+r.week);
+    if(el) setTimeout(function(){ el.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
+  } else {
+    window.scrollTo({top:0});
+  }
+}
+function refresh(){
+  var y = window.scrollY;
+  renderView();
+  window.scrollTo({top:y});
+}
+
+/* ============================== ACTIONS ============================== */
+function toggleDayComplete(id, checked){
+  var isDone = isDayDone(id);
+  if(checked === isDone) return;
+  if(checked) state.completedDays[id] = {done:true, ts:new Date().toISOString()};
+  else delete state.completedDays[id];
+  recalcXP();
+  saveState();
+  checkBadges();
+  refresh();
+}
+function openSearch(){
+  uiState.searchOpen = true;
+  document.getElementById('searchOverlay').classList.add('is-open');
+  renderSearchResults('');
+  var input = document.getElementById('searchInput');
+  input.value = '';
+  setTimeout(function(){ input.focus(); }, 60);
+}
+function closeSearch(){
+  uiState.searchOpen = false;
+  document.getElementById('searchOverlay').classList.remove('is-open');
+}
+function renderSearchResults(query){
+  var box = document.getElementById('searchResults');
+  if(!box) return;
+  var q = query.trim().toLowerCase();
+  if(!q){ box.innerHTML = '<div class="search-empty">Type to search all 90 days\u2026</div>'; return; }
+  var results = CURRICULUM.days.filter(function(d){
+    return d.title.toLowerCase().indexOf(q)!==-1 || d.objective.toLowerCase().indexOf(q)!==-1 || d.assignment.toLowerCase().indexOf(q)!==-1;
+  }).slice(0,20);
+  if(!results.length){ box.innerHTML = '<div class="search-empty">No matching days.</div>'; return; }
+  box.innerHTML = results.map(function(d){
+    return '<div class="search-result" data-action="search-result" data-day="' + d.id + '">' +
+      '<span class="search-result__num">D' + pad(d.id) + '</span>' +
+      '<div><div class="search-result__title">' + escapeHtml(d.title) + '</div><div class="search-result__meta">Week ' + d.week + ' \u00b7 Phase ' + toRoman(d.phase) + '</div></div></div>';
+  }).join('');
+}
+function openMobileMenu(){
+  uiState.mobileMenuOpen = true;
+  document.getElementById('sidebar').classList.add('mobile-open');
+  document.getElementById('sidebarScrim').classList.add('is-open');
+}
+function closeMobileMenu(){
+  uiState.mobileMenuOpen = false;
+  var sb = document.getElementById('sidebar');
+  if(sb) sb.classList.remove('mobile-open');
+  var scrim = document.getElementById('sidebarScrim');
+  if(scrim) scrim.classList.remove('is-open');
+}
+function openResetModal(){
+  uiState.resetModalOpen = true;
+  document.getElementById('resetModal').classList.add('is-open');
+}
+function closeResetModal(){
+  uiState.resetModalOpen = false;
+  document.getElementById('resetModal').classList.remove('is-open');
+}
+function doResetProgress(){
+  state = defaultState();
+  saveState();
+  closeResetModal();
+  refresh();
+}
+function exportProgress(){
+  var blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'mangaka-path-progress.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  showToast('Progress exported', 'Saved as mangaka-path-progress.json', 'download');
+}
+function handleImportFile(file){
+  if(!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev){
+    try{
+      var parsed = JSON.parse(ev.target.result);
+      if(parsed && typeof parsed==='object'){
+        state = Object.assign(defaultState(), parsed);
+        recalcXP();
+        saveState();
+        checkBadges();
+        refresh();
+        showToast('Progress imported', 'Your saved file has been loaded.', 'upload');
+      }
+    }catch(err){
+      showToast('Import failed', 'That file could not be read as valid progress data.', 'alert');
+    }
+  };
+  reader.readAsText(file);
+}
+function showToast(title, sub, iconName){
+  var container = document.getElementById('toastContainer');
+  if(!container) return;
+  var el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = '<div class="badge-stamp" style="width:38px;height:38px;flex-shrink:0">' + icon(iconName||'star') + '</div>' +
+    '<div><div class="toast__title">' + escapeHtml(title) + '</div><div class="toast__sub">' + escapeHtml(sub||'') + '</div></div>';
+  container.appendChild(el);
+  setTimeout(function(){
+    el.classList.add('is-leaving');
+    setTimeout(function(){ el.remove(); }, 300);
+  }, 4200);
+}
+
+/* ============================== EVENT DELEGATION ============================== */
+document.addEventListener('click', function(e){
+  if(e.target.tagName === 'INPUT') return;
+  var el = e.target.closest('[data-action]');
+  if(!el) return;
+  var action = el.dataset.action;
+
+  if(action==='nav'){ e.preventDefault(); navigate(el.dataset.route); closeMobileMenu(); return; }
+  if(action==='toggle-phase-group'){ uiState.openPhaseGroups[Number(el.dataset.phase)] = !uiState.openPhaseGroups[Number(el.dataset.phase)]; refresh(); return; }
+  if(action==='toggle-week'){ var w = Number(el.dataset.week); uiState.openWeeks[w] = !uiState.openWeeks[w]; refresh(); return; }
+  if(action==='toggle-embed'){ uiState.embedsOpen[el.dataset.key] = !uiState.embedsOpen[el.dataset.key]; refresh(); return; }
+  if(action==='open-search'){ openSearch(); return; }
+  if(action==='close-search'){ closeSearch(); return; }
+  if(action==='search-result'){ closeSearch(); navigate('day-'+el.dataset.day); return; }
+  if(action==='open-menu'){ openMobileMenu(); return; }
+  if(action==='close-menu'){ closeMobileMenu(); return; }
+  if(action==='reset-progress'){ openResetModal(); return; }
+  if(action==='confirm-reset'){ doResetProgress(); return; }
+  if(action==='cancel-reset'){ closeResetModal(); return; }
+  if(action==='export-progress'){ exportProgress(); return; }
+  if(action==='trigger-import'){ document.getElementById('importFileInput').click(); return; }
+});
+
+document.addEventListener('change', function(e){
+  var el = e.target.closest('[data-action]');
+  if(!el) return;
+  var action = el.dataset.action;
+  if(action==='toggle-day'){ toggleDayComplete(Number(el.dataset.day), el.checked); return; }
+  if(action==='toggle-checklist'){
+    var dId = el.dataset.day, idx = Number(el.dataset.idx);
+    if(!state.checklist[dId]) state.checklist[dId] = [];
+    state.checklist[dId][idx] = el.checked;
+    saveState();
+    return;
+  }
+  if(action==='set-start-date'){ state.startDate = el.value; saveState(); refresh(); return; }
+  if(action==='import-file'){ handleImportFile(el.files[0]); return; }
+});
+
+var notesDebounceTimer = null;
+document.addEventListener('input', function(e){
+  if(e.target.matches && e.target.matches('[data-action="notes-input"]')){
+    var id = e.target.dataset.day;
+    var val = e.target.value;
+    var hint = document.getElementById('notesHint-'+id);
+    if(hint) hint.textContent = 'Saving\u2026';
+    clearTimeout(notesDebounceTimer);
+    notesDebounceTimer = setTimeout(function(){
+      state.notes[id] = val;
+      saveState();
+      var h = document.getElementById('notesHint-'+id);
+      if(h) h.textContent = 'Saved ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    }, 500);
+    return;
+  }
+  if(e.target.id==='searchInput'){ renderSearchResults(e.target.value); }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key==='/' && !uiState.searchOpen){
+    var tag = document.activeElement ? document.activeElement.tagName : '';
+    if(tag!=='TEXTAREA' && tag!=='INPUT'){ e.preventDefault(); openSearch(); }
+  }
+  if(e.key==='Escape'){
+    if(uiState.searchOpen) closeSearch();
+    if(uiState.resetModalOpen) closeResetModal();
+    if(uiState.mobileMenuOpen) closeMobileMenu();
+  }
+});
+
+/* ============================== INIT ============================== */
+function init(){
+  loadState();
+  recalcXP();
+  saveState();
+  checkBadges();
+  window.addEventListener('hashchange', render);
+  render();
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init);
+else init();
+
+})();
+
+</script>
+</body>
+</html>
